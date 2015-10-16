@@ -36,9 +36,11 @@
 		</Compiler>
 		<Unit filename="include/Card.h" />
 		<Unit filename="include/CardDeck.h" />
+		<Unit filename="include/GameEngine.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Card.cpp" />
 		<Unit filename="src/CardDeck.cpp" />
+		<Unit filename="src/GameEngine.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
