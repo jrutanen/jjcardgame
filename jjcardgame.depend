@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1444942014 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\card.cpp
+	"Card.h"
+
+1444942014 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\card.h
+
+1444934284 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\carddeck.cpp
+	"CardDeck.h"
+
+1444934284 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\carddeck.h
+
+1445034077 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\main.cpp
+	<iostream>
+	"GameEngine.h"
+
+1445034021 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\gameengine.h
+
+1445034132 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\gameengine.cpp
+	"GameEngine.h"
+
