@@ -35,6 +35,14 @@ void GameEngine::GameLoop()
     std::cout << card_deck.GetCardOnTop()->GetCardName() << "\n";
   }
 
+  InitDeck();
+  card_deck.Shuffle();
+  InitPlayer();
+
+  std::cout << "Player 1 info: HitPoints: ";
+  std::cout << player1.GetHitPoints() << ", Mana: " << player1.GetMana();
+  std::cout << ", First Card in Hand: " << player1.ShowHand().at(0)->GetCardName() << "\n";
+
   while(!die) {
     //execute game
     if (player1.GetHitPoints() > 0)
@@ -66,4 +74,11 @@ void GameEngine::InitDeck()
   card_deck.AddCard(&card_four);
   card_five.SetCardName("Card Five");
   card_deck.AddCard(&card_five);
+}
+
+void GameEngine::InitPlayer()
+{
+  player1.SetDeck(&card_deck);
+  player1.SetUpGame();
+  player1.SetUpTurn();
 }

@@ -12,6 +12,7 @@ class Hand
         virtual ~Hand();
         void AddCard(Card* p_card);
         Card* PlayCard(Card* p_card);
+        std::vector<Card*> ShowCards();
         int GetNumberOfCards();
     protected:
     private:

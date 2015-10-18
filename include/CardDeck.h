@@ -20,6 +20,7 @@ class CardDeck
         void Shuffle();
         Card* GetCardOnTop();
         Card* GetCardOnBottom();
+        bool IsEmpty();
 //        void RemoveCard(Card* p_card);
     protected:
     private:

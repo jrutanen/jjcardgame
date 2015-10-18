@@ -48,13 +48,23 @@ void CardDeck::Shuffle()
 
 Card* CardDeck::GetCardOnTop()
 {
-  if (cards.size() > 0)
+  if (!IsEmpty())
   {
     Card* first_card = cards.front();
     cards.erase(cards.begin());
     return first_card;
   }
-  return nullptr;
+}
+
+bool CardDeck::IsEmpty()
+{
+  bool is_empty = false;
+
+  if (cards.size() < 1)
+  {
+    is_empty = true;
+  }
+  return is_empty;
 }
 
 Card* CardDeck::GetCardOnBottom()

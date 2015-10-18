@@ -15,13 +15,14 @@ class Player
         int GetHitPoints ();
         void ReduceHitPoint(int points);
         void DrawCard();
-        std::vector<Card> ShowHand();
+        std::vector<Card*> ShowHand();
         Player();
         void SetName(std::string name);
         std::string GetName();
         void SetDeck(CardDeck* p_deck);
         void SetHero(Hero* p_hero);
         void AddMana(int mana_points);
+        int GetMana();
         void ReduceAvailableMana(int mana_points);
         void SetUpTurn();
         void SetUpGame();

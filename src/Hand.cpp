@@ -27,3 +27,8 @@ int Hand::GetNumberOfCards()
 {
   return cards_in_hand.size();
 }
+
+std::vector<Card*> Hand::ShowCards()
+{
+  return cards_in_hand;
+}

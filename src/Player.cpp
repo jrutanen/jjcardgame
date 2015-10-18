@@ -48,20 +48,25 @@ void Player::SetHero(Hero* p_hero)
 {
   p_player_hero = p_hero;
 }
-std::vector<Card> Player::ShowHand()
-{
-  std::vector<Card> vectori;
-  return vectori;
-}
 
 void Player::DrawCard()
 {
   player_hand.AddCard(p_card_deck->GetCardOnTop());
 }
 
+std::vector<Card*> Player::ShowHand()
+{
+  return player_hand.ShowCards();
+}
+
 void Player::AddMana(int mana_points)
 {
   player_mana_points += mana_points;
+}
+
+int Player::GetMana()
+{
+  return player_mana_points;
 }
 
 void Player::ReduceAvailableMana(int mana_points)
@@ -78,9 +83,11 @@ void Player::SetUpTurn()
 void Player::SetUpGame()
 {
   //start hand contains 2 cards
-  for (int i = 0; i < 2; ++i)
-  {
-    DrawCard();
-  }
-
+ // for (int i = 0; i < 2; ++i)
+ // {
+    if(!p_card_deck->IsEmpty())
+    {
+      DrawCard();
+    }
+ // }
 }

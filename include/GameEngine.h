@@ -15,6 +15,7 @@ class GameEngine
         void GameLoop();
         Player player1;
         void InitDeck();
+        void InitPlayer();
         CardDeck card_deck;
         Card card_one;
         Card card_two;
