@@ -26,8 +26,6 @@ void CardDeck::Shuffle()
   // seed the random number generator
   std::mt19937 eng(time(0));
 
-//  int iterations = temp_deck.size();
-
   for(int i = 0; i < cards.size(); ++i)
   {
     //if there is more than one card to select from
