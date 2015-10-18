@@ -32,21 +32,21 @@ int MonsterCard::GetCardDefence()
 }
 
 //Attack and Defence additions and reductions
-void MonsterCard::AddAttack(int attack);
+void MonsterCard::AddAttack(int attack)
 {
   card_attack = card_attack + attack;
 }
 
-void MonsterCard::ReduceAttack(int attack);
+void MonsterCard::ReduceAttack(int attack)
 {
   card_attack = card_attack - attack;
-
-void MonsterCard::AddDefence(int defence);
+}
+void MonsterCard::AddDefence(int defence)
 {
   card_defence = card_defence + defence;
 }
 
-void MonsterCard::ReduceDefence(int defence);
+void MonsterCard::ReduceDefence(int defence)
 {
   card_defence = card_defence - defence;
 }

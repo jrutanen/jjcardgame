@@ -7,6 +7,8 @@ class MonsterCard:Card
 {
     public:
         void AddAttack(int attack);
+        void AddDefence(int defence);
+        void ReduceAttack(int attack);
         void ReduceDefence(int defence);
         void SetCardAttack(int setattack);
         void SetCardDefence(int setdefence);
