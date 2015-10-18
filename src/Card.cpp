@@ -41,22 +41,3 @@ int Card::GetCastingCost()
   return casting_cost;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> f60e2023aec360768bdac9b803bcccc14ff8da63

@@ -24,7 +24,7 @@ void GameEngine::GameLoop()
   for (int i = 0; i < 5; ++i)
   {
     Card* debug_card = card_deck.GetCardOnTop();
-    std::cout << debug_card->GetName() << "\n";
+    std::cout << debug_card->GetCardName() << "\n";
   }
 
   std::cout << "After shuffling deck is:\n";
@@ -32,7 +32,7 @@ void GameEngine::GameLoop()
   card_deck.Shuffle();
   for (int i = 0; i < 5; ++i)
   {
-    std::cout << card_deck.GetCardOnTop()->GetName() << "\n";
+    std::cout << card_deck.GetCardOnTop()->GetCardName() << "\n";
   }
 
   while(!die) {
@@ -56,14 +56,14 @@ void GameEngine::GameLoop()
 
 void GameEngine::InitDeck()
 {
-  card_one.SetName("Card One");
+  card_one.SetCardName("Card One");
   card_deck.AddCard(&card_one);
-  card_two.SetName("Card Two");
+  card_two.SetCardName("Card Two");
   card_deck.AddCard(&card_two);
-  card_three.SetName("Card Three");
+  card_three.SetCardName("Card Three");
   card_deck.AddCard(&card_three);
-  card_four.SetName("Card Four");
+  card_four.SetCardName("Card Four");
   card_deck.AddCard(&card_four);
-  card_five.SetName("Card Five");
+  card_five.SetCardName("Card Five");
   card_deck.AddCard(&card_five);
 }
