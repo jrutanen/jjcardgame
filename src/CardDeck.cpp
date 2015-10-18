@@ -26,7 +26,9 @@ void CardDeck::Shuffle()
   // seed the random number generator
   std::mt19937 eng(time(0));
 
-  for(int i = 0; i < temp_deck.size(); ++i)
+//  int iterations = temp_deck.size();
+
+  for(int i = 0; i < cards.size(); ++i)
   {
     //if there is more than one card to select from
     if (temp_deck.size() > 1)
@@ -36,7 +38,7 @@ void CardDeck::Shuffle()
       //generate random number at assign it to card_pos
       card_pos = distr(eng);
       shuffled_deck.push_back(temp_deck.at(card_pos));
-  //    temp_deck.erase(cards.begin() + card_pos);
+      temp_deck.erase(temp_deck.begin() + card_pos);
     }
     else
     {
