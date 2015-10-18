@@ -73,6 +73,7 @@
 1445121143 c:\newcardgame\jjcardgame\include\hero.h
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 1445124990 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\player.h
 	<string>
 	<vector>
@@ -94,10 +95,15 @@
 1445124990 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\player.cpp
 	"Player.h"
 =======
+=======
+>>>>>>> f1fa28e8fff19d7e422c9692110731c054ed5877
 1445173195 source:c:\newcardgame\jjcardgame\src\monstercard.cpp
 	"MonsterCard.h"
 
 1445185497 c:\newcardgame\jjcardgame\include\monstercard.h
 	"Card.h"
+<<<<<<< HEAD
 >>>>>>> f60e2023aec360768bdac9b803bcccc14ff8da63
+=======
+>>>>>>> f1fa28e8fff19d7e422c9692110731c054ed5877
 

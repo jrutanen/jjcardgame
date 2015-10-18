@@ -14,21 +14,11 @@ Card::~Card()
     //dtor
 }
 
-<<<<<<< HEAD
-std::string Card::GetName()
-=======
 std::string Card::GetCardName()
->>>>>>> f60e2023aec360768bdac9b803bcccc14ff8da63
 {
   return card_name;
 }
 
-<<<<<<< HEAD
-void Card::SetName(std::string name)
-{
-  card_name = name;
-}
-=======
 void Card::SetCardName(std::string name1)
 {
   card_name = name1;
@@ -72,4 +62,7 @@ int Card::GetCastingCost()
 
 
 
+<<<<<<< HEAD
 >>>>>>> f60e2023aec360768bdac9b803bcccc14ff8da63
+=======
+>>>>>>> f1fa28e8fff19d7e422c9692110731c054ed5877
