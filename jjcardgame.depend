@@ -8,7 +8,7 @@
 	"CardDeck.h"
 	<iostream>
 
-1445124990 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\player.h
+1445198943 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\player.h
 	<string>
 	<vector>
 	"CardDeck.h"
@@ -30,7 +30,10 @@
 
 1445124990 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\hero.h
 
-1445124990 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\hand.h
+1445199808 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\hand.h
+	<vector>
+	<algorithm>
+	"Card.h"
 
 1445124990 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\hand.cpp
 	"Hand.h"
@@ -38,7 +41,7 @@
 1445124990 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\hero.cpp
 	"Hero.h"
 
-1445124990 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\player.cpp
+1445199306 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\player.cpp
 	"Player.h"
 
 1445197178 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\card.cpp
@@ -54,4 +57,11 @@
 
 1445196593 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\gameengine.cpp
 	"GameEngine.h"
+
+1445197293 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\monstercard.cpp
+	"MonsterCard.h"
+
+1445197260 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\monstercard.h
+	"Card.h"
+	<string>
 

@@ -2,8 +2,11 @@
 
 Player::Player()
 {
-  hit_points = 40;//ctor
+  //ctor
+  hit_points = 40;
   player_name = "Player 1";
+  player_mana_points = 0;
+  available_mana = 0;
 }
 
 Player::~Player()
@@ -56,9 +59,24 @@ void Player::DrawCard()
 
 }
 
+void Player::AddMana(int mana_points)
+{
+  player_mana_points += mana_points;
+}
 
+void Player::ReduceAvailableMana(int mana_points)
+{
+  available_mana -= mana_points;
+}
 
+void Player::SetUpTurn()
+{
+  //add one mana point to the player mana points
+  AddMana(1);
+}
 
+void Player::SetUpGame()
+{
+  //start hand contains 2 cards
 
-
-
+}

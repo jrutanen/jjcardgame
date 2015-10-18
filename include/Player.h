@@ -21,14 +21,20 @@ class Player
         std::string GetName();
         void SetDeck(CardDeck* p_deck);
         void SetHero(Hero* p_hero);
+        void AddMana(int mana_points);
+        void ReduceAvailableMana(int mana_points);
+        void SetUpTurn();
+        void SetUpGame();
         virtual ~Player();
     protected:
     private:
-            int hit_points;
-            std::string player_name;
-            CardDeck* p_card_deck;
-            Hero* p_player_hero;
-            Hand player_hand;
+        int hit_points;
+        int player_mana_points;
+        int available_mana;
+        std::string player_name;
+        CardDeck* p_card_deck;
+        Hero* p_player_hero;
+        Hand player_hand;
 };
 
 #endif // PLAYER_H
