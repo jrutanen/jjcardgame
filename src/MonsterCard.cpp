@@ -2,20 +2,15 @@
 
 MonsterCard::MonsterCard()
 {
-<<<<<<< HEAD
+
     //ctor
-=======
     card_ability = "no text"; //ctor
->>>>>>> f1fa28e8fff19d7e422c9692110731c054ed5877
 }
 
 MonsterCard::~MonsterCard()
 {
     //dtor
 }
-<<<<<<< HEAD
-=======
-
 //Get and Set functions
 void MonsterCard::SetCardAttack(int setattack)
 {
@@ -56,18 +51,3 @@ void MonsterCard::ReduceDefence(int defence)
 {
   card_defence = card_defence - defence;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> f1fa28e8fff19d7e422c9692110731c054ed5877
