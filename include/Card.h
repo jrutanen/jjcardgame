@@ -20,6 +20,7 @@ class Card
         std::string card_name;
         std::string card_type;
     private:
+        std::string card_name;
 };
 
 #endif // CARD_H

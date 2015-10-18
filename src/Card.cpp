@@ -41,3 +41,26 @@ int Card::GetCastingCost()
   return casting_cost;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<<<<<<< HEAD
+>>>>>>> f60e2023aec360768bdac9b803bcccc14ff8da63
+=======
+>>>>>>> f1fa28e8fff19d7e422c9692110731c054ed5877
+>>>>>>> HoldYourBreath-master
