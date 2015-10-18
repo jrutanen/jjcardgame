@@ -56,7 +56,7 @@ std::vector<Card> Player::ShowHand()
 
 void Player::DrawCard()
 {
-
+  player_hand.AddCard(p_card_deck->GetCardOnTop());
 }
 
 void Player::AddMana(int mana_points)
@@ -78,5 +78,9 @@ void Player::SetUpTurn()
 void Player::SetUpGame()
 {
   //start hand contains 2 cards
+  for (int i = 0; i < 2; ++i)
+  {
+    DrawCard();
+  }
 
 }
