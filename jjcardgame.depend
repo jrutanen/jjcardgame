@@ -29,10 +29,11 @@
 1445185079 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\gameengine.cpp
 	"GameEngine.h"
 
-1444942533 source:c:\newcardgame\jjcardgame\src\card.cpp
+1445186171 source:c:\newcardgame\jjcardgame\src\card.cpp
 	"Card.h"
 
-1444942533 c:\newcardgame\jjcardgame\include\card.h
+1445186314 c:\newcardgame\jjcardgame\include\card.h
+	<string>
 
 1444941483 source:c:\newcardgame\jjcardgame\src\carddeck.cpp
 	"CardDeck.h"
@@ -47,7 +48,7 @@
 	"Player.h"
 	<iostream>
 
-1445123889 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
+1445124261 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
 	"GameEngine.h"
 
 1445124072 source:c:\newcardgame\jjcardgame\src\player.cpp
@@ -71,6 +72,7 @@
 
 1445121143 c:\newcardgame\jjcardgame\include\hero.h
 
+<<<<<<< HEAD
 1445124990 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\player.h
 	<string>
 	<vector>
@@ -91,4 +93,11 @@
 
 1445124990 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\player.cpp
 	"Player.h"
+=======
+1445173195 source:c:\newcardgame\jjcardgame\src\monstercard.cpp
+	"MonsterCard.h"
+
+1445185497 c:\newcardgame\jjcardgame\include\monstercard.h
+	"Card.h"
+>>>>>>> f60e2023aec360768bdac9b803bcccc14ff8da63
 
