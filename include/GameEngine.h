@@ -1,6 +1,7 @@
 #ifndef GAMEENGINE_H
 #define GAMEENGINE_H
 #include "Player.h"
+#include "CardDeck.h"
 #include <iostream>
 
 class GameEngine
@@ -13,6 +14,13 @@ class GameEngine
     private:
         void GameLoop();
         Player player1;
+        void InitDeck();
+        CardDeck card_deck;
+        Card card_one;
+        Card card_two;
+        Card card_three;
+        Card card_four;
+        Card card_five;
 };
 
 #endif // GAMEENGINE_H

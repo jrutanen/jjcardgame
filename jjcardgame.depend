@@ -1,21 +1,32 @@
 # depslib dependency file v1.0
-1444942014 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\card.cpp
+1445182336 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\card.cpp
 	"Card.h"
 
-1444942014 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\card.h
+1445182328 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\card.h
+	<string>
 
-1444934284 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\carddeck.cpp
+1445183276 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\carddeck.cpp
 	"CardDeck.h"
 
-1444934284 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\carddeck.h
+1445185229 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\carddeck.h
+	<vector>
+	<random>
+	<ctime>
+	<iostream>
+	"Card.h"
+	<string>
+	<sstream>
 
 1445034077 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\main.cpp
 	<iostream>
 	"GameEngine.h"
 
-1445034021 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\gameengine.h
+1445184780 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\gameengine.h
+	"Player.h"
+	"CardDeck.h"
+	<iostream>
 
-1445034132 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\gameengine.cpp
+1445185079 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\gameengine.cpp
 	"GameEngine.h"
 
 1444942533 source:c:\newcardgame\jjcardgame\src\card.cpp
@@ -59,4 +70,25 @@
 	"Hero.h"
 
 1445121143 c:\newcardgame\jjcardgame\include\hero.h
+
+1445124990 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\player.h
+	<string>
+	<vector>
+	"CardDeck.h"
+	"Hero.h"
+	"Hand.h"
+	"Card.h"
+
+1445124990 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\hero.h
+
+1445124990 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\hand.h
+
+1445124990 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\hand.cpp
+	"Hand.h"
+
+1445124990 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\hero.cpp
+	"Hero.h"
+
+1445124990 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\player.cpp
+	"Player.h"
 
