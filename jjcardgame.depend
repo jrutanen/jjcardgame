@@ -3,10 +3,11 @@
 	<iostream>
 	"GameEngine.h"
 
-1445277735 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\gameengine.h
+1445282304 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\gameengine.h
 	"Player.h"
 	"CardDeck.h"
 	<iostream>
+	<vector>
 
 1445205297 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\player.h
 	<string>
@@ -55,7 +56,7 @@
 
 1445196593 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\datamanager.h
 
-1445277891 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\gameengine.cpp
+1445282572 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\gameengine.cpp
 	"GameEngine.h"
 
 1445197293 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\monstercard.cpp

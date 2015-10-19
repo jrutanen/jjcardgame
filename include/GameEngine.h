@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "CardDeck.h"
 #include <iostream>
+#include <vector>
 
 class GameEngine
 {
@@ -13,6 +14,8 @@ class GameEngine
     protected:
     private:
         void GameLoop();
+        void StartTurn();
+        void EndTurn();
         Player player1;
         Player player2;
         void InitDeck(CardDeck* card_deck);
@@ -25,6 +28,9 @@ class GameEngine
         Card card_three;
         Card card_four;
         Card card_five;
+        std::vector<Card> available_cards;
+        std::vector<Player*> players;
+        std::vector<CardDeck*> card_decks;
 };
 
 #endif // GAMEENGINE_H

@@ -3,6 +3,12 @@
 GameEngine::GameEngine()
 {
     //ctor
+    //add players to the players vector
+    players.push_back(&player1);
+    players.push_back(&player2);
+    //add card decks to the card_decks vector
+    card_decks.push_back(&card_deck1);
+    card_decks.push_back(&card_deck2);
 }
 
 GameEngine::~GameEngine()
@@ -32,6 +38,7 @@ void GameEngine::GameLoop()
   card_deck2.Shuffle();
   //Set-up player for game and turn 1
   InitPlayer(&player2, &card_deck2);
+  player2.AddMana(1);
 
   std::cout << "Player 1 info: HitPoints: ";
   std::cout << player1.GetHitPoints() << ", Mana: " << player1.GetMana();
@@ -42,9 +49,34 @@ void GameEngine::GameLoop()
   std::cout << ", First Card in Hand: " << player2.ShowHand().at(0)->GetCardName() << "\n";
 
 //game loop
+int turn = 1;
   while(!die) {
-    die = true;
+    StartTurn();
+    std::cout << "Player 1 info: Mana: " << player1.GetMana() << "\n";
+    std::cout << "Player 2 info: Mana: " << player2.GetMana() << "\n";
+    EndTurn();
+    ++turn;
+
+    //run ten turns at this point.
+    if (turn > 10)
+    {
+      die = true;
+    }
+
   }
+}
+
+void GameEngine::StartTurn()
+{
+  for(int i = 0; i < players.size(); ++i)
+  {
+    players.at(i)->SetUpTurn();
+  }
+}
+
+void GameEngine::EndTurn()
+{
+
 }
 
 void GameEngine::InitDeck(CardDeck* card_deck)
