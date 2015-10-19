@@ -1,5 +1,6 @@
 #ifndef DATAMANAGER_H
 #define DATAMANAGER_H
+#include "JJCardGame.h"
 
 
 class DataManager

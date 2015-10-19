@@ -5,6 +5,8 @@
 #include <ctime>
 #include <iostream>
 #include "Card.h"
+#include "JJCardGame.h"
+
 
 //for testing
 #include <string>
@@ -20,11 +22,14 @@ class CardDeck
         void Shuffle();
         Card* GetCardOnTop();
         Card* GetCardOnBottom();
+        int GetCardDeckId();
+        void SetCardDeckId(int id);
         bool IsEmpty();
 //        void RemoveCard(Card* p_card);
     protected:
     private:
         std::vector<Card*> cards;
+        int card_deck_id;
 
 };
 

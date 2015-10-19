@@ -26,7 +26,7 @@ void CardDeck::Shuffle()
   // seed the random number generator
   std::mt19937 eng(time(0));
 
-  for(int i = 0; i < cards.size(); ++i)
+  for(uint i = 0; i < cards.size(); ++i)
   {
     //if there is more than one card to select from
     if (temp_deck.size() > 1)
@@ -54,7 +54,19 @@ Card* CardDeck::GetCardOnTop()
     cards.erase(cards.begin());
     return first_card;
   }
+  return nullptr;
 }
+
+int CardDeck::GetCardDeckId()
+{
+  return card_deck_id;
+}
+
+void CardDeck::SetCardDeckId(int id)
+{
+  card_deck_id = id;
+}
+
 
 bool CardDeck::IsEmpty()
 {

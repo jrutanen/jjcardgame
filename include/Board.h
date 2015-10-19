@@ -1,5 +1,6 @@
 #ifndef BOARD_H
 #define BOARD_H
+#include "JJCardGame.h"
 
 
 class Board

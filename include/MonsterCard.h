@@ -1,6 +1,7 @@
 #ifndef MONSTERCARD_H
 #define MONSTERCARD_H
 #include "Card.h"
+#include "JJCardGame.h"
 
 #include <string>
 

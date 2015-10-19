@@ -3,6 +3,8 @@
 #include <vector>
 #include <algorithm>
 #include "Card.h"
+#include "JJCardGame.h"
+
 
 
 class Hand

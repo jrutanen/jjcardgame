@@ -6,6 +6,8 @@
 #include "Hero.h"
 #include "Hand.h"
 #include "Card.h"
+#include "JJCardGame.h"
+
 //using namespace std;
 
 class Player

@@ -1,5 +1,6 @@
 #ifndef HERO_H
 #define HERO_H
+#include "JJCardGame.h"
 
 
 class Hero

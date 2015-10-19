@@ -68,7 +68,7 @@ int turn = 1;
 
 void GameEngine::StartTurn()
 {
-  for(int i = 0; i < players.size(); ++i)
+  for(uint i = 0; i < players.size(); ++i)
   {
     players.at(i)->SetUpTurn();
   }

@@ -1,5 +1,6 @@
 #ifndef GAMEENGINE_H
 #define GAMEENGINE_H
+#include "JJCardGame.h"
 #include "Player.h"
 #include "CardDeck.h"
 #include "Board.h"
