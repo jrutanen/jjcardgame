@@ -2,6 +2,7 @@
 #define GAMEENGINE_H
 #include "Player.h"
 #include "CardDeck.h"
+#include "Board.h"
 #include <iostream>
 #include <vector>
 
@@ -23,6 +24,7 @@ class GameEngine
         void InitPlayer(Player* player, CardDeck* card_deck);
         CardDeck card_deck1;
         CardDeck card_deck2;
+        Board game_board;
         Card card_one;
         Card card_two;
         Card card_three;
