@@ -19,13 +19,18 @@ void GameEngine::GameLoop()
 {
   bool die = false;
 
-  //initialize card deck for player 1.
+  //initialize card deck for player 1
   InitDeck(&card_deck1);
+  //shuffle player 1 deck
   card_deck1.Shuffle();
+  //Set-up player for game and turn 1
   InitPlayer(&player1, &card_deck1);
 
+  //initialize card deck for player 2
   InitDeck(&card_deck2);
+  //shuffle player 2 deck
   card_deck2.Shuffle();
+  //Set-up player for game and turn 1
   InitPlayer(&player2, &card_deck2);
 
   std::cout << "Player 1 info: HitPoints: ";
@@ -36,23 +41,10 @@ void GameEngine::GameLoop()
   std::cout << player2.GetHitPoints() << ", Mana: " << player2.GetMana();
   std::cout << ", First Card in Hand: " << player2.ShowHand().at(0)->GetCardName() << "\n";
 
+//game loop
   while(!die) {
-    //execute game
-    if (player1.GetHitPoints() > 0)
-    {
-      std::cout << "hit points is " << player1.GetHitPoints() << std::endl;
-      player1.ReduceHitPoint(5);
-    }
-    else
-    {
-      die = true;
-      std::cout << "hit points is " << player1.GetHitPoints() << std::endl;
-    }
-
-    //prevent infinite loop at this point
-
+    die = true;
   }
-
 }
 
 void GameEngine::InitDeck(CardDeck* card_deck)
