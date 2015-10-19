@@ -11,7 +11,7 @@
 	<iostream>
 	<vector>
 
-1445293043 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\player.h
+1445293931 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\player.h
 	<string>
 	<vector>
 	"CardDeck.h"
@@ -49,7 +49,7 @@
 1445124990 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\hero.cpp
 	"Hero.h"
 
-1445205545 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\player.cpp
+1445293307 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\player.cpp
 	"Player.h"
 
 1445197178 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\card.cpp

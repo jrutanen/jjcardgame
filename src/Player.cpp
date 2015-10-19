@@ -45,6 +45,11 @@ void Player::SetDeck(CardDeck* p_deck)
   p_card_deck = p_deck;
 }
 
+void Player:: ShuffleDeck()
+{
+  p_card_deck->Shuffle();
+}
+
 void Player::SetHero(Hero* p_hero)
 {
   p_player_hero = p_hero;
@@ -83,12 +88,15 @@ void Player::SetUpTurn()
 
 void Player::SetUpGame()
 {
+  //shuffle deck
+  ShuffleDeck();
+
   //start hand contains 2 cards
- // for (int i = 0; i < 2; ++i)
- // {
+  for (int i = 0; i < 2; ++i)
+  {
     if(!p_card_deck->IsEmpty())
     {
       DrawCard();
     }
- // }
+  }
 }
