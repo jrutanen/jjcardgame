@@ -91,7 +91,7 @@ bool CardDeck::IsEmpty()
 
 Card* CardDeck::GetCardOnBottom()
 {
-  if (cards.size() > 0)
+  if (!IsEmpty())
   {
     Card* last_card = cards.back();
     cards.pop_back();

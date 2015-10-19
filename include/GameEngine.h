@@ -20,7 +20,7 @@ class GameEngine
         void EndTurn();
         Player player1;
         Player player2;
-//        void InitDeck(Player* player);
+        void InitGame();
         void InitPlayer(Player* player);
         Board game_board;
         Card card_one;
@@ -30,7 +30,6 @@ class GameEngine
         Card card_five;
         std::vector<Card> available_cards;
         std::vector<Player*> players;
- //       std::vector<CardDeck*> card_decks;
 };
 
 #endif // GAMEENGINE_H

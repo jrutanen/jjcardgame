@@ -22,12 +22,8 @@ void GameEngine::GameLoop()
 {
   bool die = false;
 
-  //Set-up player 1 for game and turn 1
-  InitPlayer(&player1);
-
-  //Set-up player 2 for game and turn 1
-  InitPlayer(&player2);
-  player2.AddMana(1);
+  //initialize game components (board, player, etc.)
+  InitGame();
 
   std::cout << "Player 1 info: HitPoints: ";
   std::cout << player1.GetHitPoints() << ", Mana: " << player1.GetMana();
@@ -55,6 +51,14 @@ int turn = 1;
   }
 }
 
+void GameEngine::InitGame()
+{
+  //Set-up player 1 for game
+  InitPlayer(&player1);
+  //Set-up player 2 for game
+  InitPlayer(&player2);
+}
+
 void GameEngine::StartTurn()
 {
   for(uint i = 0; i < players.size(); ++i)
@@ -72,5 +76,4 @@ void GameEngine::InitPlayer(Player* player)
 {
 //  player->SetDeck(card_deck);
   player->SetUpGame();
-  player->SetUpTurn();
 }
