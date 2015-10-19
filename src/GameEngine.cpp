@@ -18,30 +18,23 @@ void GameEngine::Run()
 void GameEngine::GameLoop()
 {
   bool die = false;
-  InitDeck();
 
-  std::cout << "Before shuffling deck is:\n";
-  for (int i = 0; i < 5; ++i)
-  {
-    Card* debug_card = card_deck.GetCardOnTop();
-    std::cout << debug_card->GetCardName() << "\n";
-  }
+  //initialize card deck for player 1.
+  InitDeck(&card_deck1);
+  card_deck1.Shuffle();
+  InitPlayer(&player1, &card_deck1);
 
-  std::cout << "After shuffling deck is:\n";
-  InitDeck();
-  card_deck.Shuffle();
-  for (int i = 0; i < 5; ++i)
-  {
-    std::cout << card_deck.GetCardOnTop()->GetCardName() << "\n";
-  }
-
-  InitDeck();
-  card_deck.Shuffle();
-  InitPlayer();
+  InitDeck(&card_deck2);
+  card_deck2.Shuffle();
+  InitPlayer(&player2, &card_deck2);
 
   std::cout << "Player 1 info: HitPoints: ";
   std::cout << player1.GetHitPoints() << ", Mana: " << player1.GetMana();
   std::cout << ", First Card in Hand: " << player1.ShowHand().at(0)->GetCardName() << "\n";
+
+  std::cout << "Player 2 info: HitPoints: ";
+  std::cout << player2.GetHitPoints() << ", Mana: " << player2.GetMana();
+  std::cout << ", First Card in Hand: " << player2.ShowHand().at(0)->GetCardName() << "\n";
 
   while(!die) {
     //execute game
@@ -62,23 +55,23 @@ void GameEngine::GameLoop()
 
 }
 
-void GameEngine::InitDeck()
+void GameEngine::InitDeck(CardDeck* card_deck)
 {
   card_one.SetCardName("Card One");
-  card_deck.AddCard(&card_one);
+  card_deck->AddCard(&card_one);
   card_two.SetCardName("Card Two");
-  card_deck.AddCard(&card_two);
+  card_deck->AddCard(&card_two);
   card_three.SetCardName("Card Three");
-  card_deck.AddCard(&card_three);
+  card_deck->AddCard(&card_three);
   card_four.SetCardName("Card Four");
-  card_deck.AddCard(&card_four);
+  card_deck->AddCard(&card_four);
   card_five.SetCardName("Card Five");
-  card_deck.AddCard(&card_five);
+  card_deck->AddCard(&card_five);
 }
 
-void GameEngine::InitPlayer()
+void GameEngine::InitPlayer(Player* player, CardDeck* card_deck)
 {
-  player1.SetDeck(&card_deck);
-  player1.SetUpGame();
-  player1.SetUpTurn();
+  player->SetDeck(card_deck);
+  player->SetUpGame();
+  player->SetUpTurn();
 }

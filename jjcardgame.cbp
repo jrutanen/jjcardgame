@@ -36,16 +36,20 @@
 		</Compiler>
 		<Unit filename="include/Card.h" />
 		<Unit filename="include/CardDeck.h" />
+		<Unit filename="include/DataManager.h" />
 		<Unit filename="include/GameEngine.h" />
 		<Unit filename="include/Hand.h" />
 		<Unit filename="include/Hero.h" />
+		<Unit filename="include/MonsterCard.h" />
 		<Unit filename="include/Player.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Card.cpp" />
 		<Unit filename="src/CardDeck.cpp" />
+		<Unit filename="src/DataManager.cpp" />
 		<Unit filename="src/GameEngine.cpp" />
 		<Unit filename="src/Hand.cpp" />
 		<Unit filename="src/Hero.cpp" />
+		<Unit filename="src/MonsterCard.cpp" />
 		<Unit filename="src/Player.cpp" />
 		<Extensions>
 			<code_completion />

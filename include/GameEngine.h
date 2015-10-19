@@ -14,9 +14,12 @@ class GameEngine
     private:
         void GameLoop();
         Player player1;
-        void InitDeck();
-        void InitPlayer();
-        CardDeck card_deck;
+        Player player2;
+        void InitDeck(CardDeck* card_deck);
+//        void InitDeck(Player* player);
+        void InitPlayer(Player* player, CardDeck* card_deck);
+        CardDeck card_deck1;
+        CardDeck card_deck2;
         Card card_one;
         Card card_two;
         Card card_three;
