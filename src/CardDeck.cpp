@@ -4,6 +4,16 @@ CardDeck::CardDeck()
 {
   //ctor
   //Initialize card vector with five cards for test purposes
+  card_one.SetCardName("Card One");
+  AddCard(&card_one);
+  card_two.SetCardName("Card Two");
+  AddCard(&card_two);
+  card_three.SetCardName("Card Three");
+  AddCard(&card_three);
+  card_four.SetCardName("Card Four");
+  AddCard(&card_four);
+  card_five.SetCardName("Card Five");
+  AddCard(&card_five);
 }
 
 CardDeck::~CardDeck()

@@ -36,6 +36,7 @@ class Player
         int available_mana;
         std::string player_name;
         CardDeck* p_card_deck;
+        CardDeck card_deck;
         Hero* p_player_hero;
         Hand player_hand;
 };

@@ -7,6 +7,7 @@ Player::Player()
   player_name = "Player 1";
   player_mana_points = 0;
   available_mana = 0;
+  SetDeck(&card_deck);
 }
 
 Player::~Player()

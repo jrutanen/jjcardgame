@@ -6,9 +6,6 @@ GameEngine::GameEngine()
     //add players to the players vector
     players.push_back(&player1);
     players.push_back(&player2);
-    //add card decks to the card_decks vector
-    card_decks.push_back(&card_deck1);
-    card_decks.push_back(&card_deck2);
 }
 
 GameEngine::~GameEngine()
@@ -25,19 +22,11 @@ void GameEngine::GameLoop()
 {
   bool die = false;
 
-  //initialize card deck for player 1
-  InitDeck(&card_deck1);
-  //shuffle player 1 deck
-  card_deck1.Shuffle();
-  //Set-up player for game and turn 1
-  InitPlayer(&player1, &card_deck1);
+  //Set-up player 1 for game and turn 1
+  InitPlayer(&player1);
 
-  //initialize card deck for player 2
-  InitDeck(&card_deck2);
-  //shuffle player 2 deck
-  card_deck2.Shuffle();
-  //Set-up player for game and turn 1
-  InitPlayer(&player2, &card_deck2);
+  //Set-up player 2 for game and turn 1
+  InitPlayer(&player2);
   player2.AddMana(1);
 
   std::cout << "Player 1 info: HitPoints: ";
@@ -79,23 +68,9 @@ void GameEngine::EndTurn()
 
 }
 
-void GameEngine::InitDeck(CardDeck* card_deck)
+void GameEngine::InitPlayer(Player* player)
 {
-  card_one.SetCardName("Card One");
-  card_deck->AddCard(&card_one);
-  card_two.SetCardName("Card Two");
-  card_deck->AddCard(&card_two);
-  card_three.SetCardName("Card Three");
-  card_deck->AddCard(&card_three);
-  card_four.SetCardName("Card Four");
-  card_deck->AddCard(&card_four);
-  card_five.SetCardName("Card Five");
-  card_deck->AddCard(&card_five);
-}
-
-void GameEngine::InitPlayer(Player* player, CardDeck* card_deck)
-{
-  player->SetDeck(card_deck);
+//  player->SetDeck(card_deck);
   player->SetUpGame();
   player->SetUpTurn();
 }

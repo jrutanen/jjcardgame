@@ -30,7 +30,11 @@ class CardDeck
     private:
         std::vector<Card*> cards;
         int card_deck_id;
-
+        Card card_one;
+        Card card_two;
+        Card card_three;
+        Card card_four;
+        Card card_five;
 };
 
 #endif // CARDDECK_H
