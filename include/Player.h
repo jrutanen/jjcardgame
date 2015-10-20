@@ -30,6 +30,7 @@ class Player
         void ReduceAvailableMana(int mana_points);
         void SetUpTurn();
         void SetUpGame();
+        Hand player_hand;
     protected:
     private:
         int hit_points;
@@ -39,7 +40,8 @@ class Player
         CardDeck* p_card_deck;
         CardDeck card_deck;
         Hero* p_player_hero;
-        Hand player_hand;
+        std::vector<Card*> cards_in_hand; //moved here from Hand.h
+
 };
 
 #endif // PLAYER_H
