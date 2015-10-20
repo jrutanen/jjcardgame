@@ -83,3 +83,86 @@
 
 1445291915 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\jjcardgame.h
 
+1445197364 source:c:\newcardgame\jjcardgame\src\card.cpp
+	"Card.h"
+
+1445364166 c:\newcardgame\jjcardgame\include\card.h
+	<string>
+	"JJCardGame.h"
+
+1445364166 c:\newcardgame\jjcardgame\include\jjcardgame.h
+
+1445197114 source:c:\newcardgame\jjcardgame\src\datamanager.cpp
+	"DataManager.h"
+
+1445364166 c:\newcardgame\jjcardgame\include\datamanager.h
+	"JJCardGame.h"
+
+1445121143 source:c:\newcardgame\jjcardgame\src\hero.cpp
+	"Hero.h"
+
+1445364166 c:\newcardgame\jjcardgame\include\hero.h
+	"JJCardGame.h"
+
+1445197364 source:c:\newcardgame\jjcardgame\src\monstercard.cpp
+	"MonsterCard.h"
+
+1445364166 c:\newcardgame\jjcardgame\include\monstercard.h
+	"Card.h"
+	"JJCardGame.h"
+	<string>
+
+1445364166 source:c:\newcardgame\jjcardgame\main.cpp
+	<iostream>
+	"GameEngine.h"
+
+1445364166 c:\newcardgame\jjcardgame\include\gameengine.h
+	"JJCardGame.h"
+	"Player.h"
+	"CardDeck.h"
+	"Board.h"
+	<iostream>
+	<vector>
+
+1445373670 c:\newcardgame\jjcardgame\include\player.h
+	<string>
+	<vector>
+	"CardDeck.h"
+	"Hero.h"
+	"Hand.h"
+	"Card.h"
+	"JJCardGame.h"
+
+1445364166 c:\newcardgame\jjcardgame\include\carddeck.h
+	<vector>
+	<random>
+	<ctime>
+	<iostream>
+	"Card.h"
+	"JJCardGame.h"
+	<string>
+	<sstream>
+
+1445364166 c:\newcardgame\jjcardgame\include\hand.h
+	<vector>
+	<algorithm>
+	"Card.h"
+	"JJCardGame.h"
+
+1445369981 c:\newcardgame\jjcardgame\include\board.h
+	"JJCardGame.h"
+	<vector>
+	"Card.h"
+
+1445367548 source:c:\newcardgame\jjcardgame\src\board.cpp
+	"Board.h"
+
+1445364166 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
+	"GameEngine.h"
+
+1445205690 source:c:\newcardgame\jjcardgame\src\hand.cpp
+	"Hand.h"
+
+1445370067 source:c:\newcardgame\jjcardgame\src\carddeck.cpp
+	"CardDeck.h"
+

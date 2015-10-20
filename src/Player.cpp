@@ -57,12 +57,24 @@ void Player::SetHero(Hero* p_hero)
 
 void Player::DrawCard()
 {
-  player_hand.AddCard(p_card_deck->GetCardOnTop());
+  Card* p_temp_card;
+  p_temp_card = p_card_deck->GetCardOnTop();
+  if(p_temp_card){
+  cards_in_hand.push_back(p_temp_card);
+ // player_hand.AddCard(p_temp_card);
+
 }
+
+}
+
+//else {
+//    player_hand.AddCard(p_card_deck->GetCardOnTop());
+
 
 std::vector<Card*> Player::ShowHand()
 {
-  return player_hand.ShowCards();
+  return cards_in_hand;
+ // return player_hand.ShowCards();
 }
 
 void Player::AddMana(int mana_points)

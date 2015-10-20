@@ -60,9 +60,9 @@ Card* CardDeck::GetCardOnTop()
 {
   if (!IsEmpty())
   {
-    Card* first_card = cards.front();
+    Card* p_first_card = cards.front();
     cards.erase(cards.begin());
-    return first_card;
+    return p_first_card;
   }
   return nullptr;
 }
