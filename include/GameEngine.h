@@ -23,13 +23,9 @@ class GameEngine
         void InitGame();
         void InitPlayer(Player* player);
         Board game_board;
-        Card card_one;
-        Card card_two;
-        Card card_three;
-        Card card_four;
-        Card card_five;
         std::vector<Card> available_cards;
         std::vector<Player*> players;
+        void PlayCard(Board* p_board, Player* p_player, Card* p_card, int slot);
 };
 
 #endif // GAMEENGINE_H

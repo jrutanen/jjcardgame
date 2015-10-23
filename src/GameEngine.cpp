@@ -77,3 +77,8 @@ void GameEngine::InitPlayer(Player* player)
 //  player->SetDeck(card_deck);
   player->SetUpGame();
 }
+
+void GameEngine::PlayCard( Board* p_board, Player* p_player, Card* p_card, int slot)
+{
+  p_board->AddCardToPlayerOne(p_player->player_hand.PlayCard(p_card), slot);
+}
