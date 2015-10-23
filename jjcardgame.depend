@@ -149,7 +149,7 @@
 	"Card.h"
 	"JJCardGame.h"
 
-1445369981 c:\newcardgame\jjcardgame\include\board.h
+1445635573 c:\newcardgame\jjcardgame\include\board.h
 	"JJCardGame.h"
 	<vector>
 	"Card.h"
@@ -165,4 +165,7 @@
 
 1445370067 source:c:\newcardgame\jjcardgame\src\carddeck.cpp
 	"CardDeck.h"
+
+1445373904 source:c:\newcardgame\jjcardgame\src\player.cpp
+	"Player.h"
 
