@@ -31,6 +31,7 @@ class Player
         void SetUpTurn();
         void SetUpGame();
         Hand player_hand;
+        Card* PlayCard(int card_nbr);
     protected:
     private:
         int hit_points;

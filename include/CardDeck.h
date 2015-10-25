@@ -35,6 +35,13 @@ class CardDeck
         Card card_three;
         Card card_four;
         Card card_five;
+        Card card_six;
+        Card card_seven;
+        Card card_eight;
+        Card card_nine;
+        Card card_ten;
+        Card card_eleven;
+        Card card_twelve;
 };
 
 #endif // CARDDECK_H

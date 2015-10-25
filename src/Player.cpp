@@ -60,11 +60,8 @@ void Player::DrawCard()
   Card* p_temp_card;
   p_temp_card = p_card_deck->GetCardOnTop();
   if(p_temp_card){
-  cards_in_hand.push_back(p_temp_card);
- // player_hand.AddCard(p_temp_card);
-
-}
-
+    cards_in_hand.push_back(p_temp_card);
+  }
 }
 
 //else {
@@ -111,4 +108,11 @@ void Player::SetUpGame()
       DrawCard();
     }
   }
+}
+
+Card* Player::PlayCard(int card_nbr)
+{
+  Card* played_card = cards_in_hand.at(card_nbr);
+  cards_in_hand.erase(cards_in_hand.begin() + card_nbr);
+  return played_card;
 }

@@ -20,11 +20,13 @@ void GameEngine::Run()
 
 void GameEngine::GameLoop()
 {
-  bool die = false;
+
+  die = false;
+  std::vector<char> response;
 
   //initialize game components (board, player, etc.)
   InitGame();
-
+/*
   std::cout << "Player 1 info: HitPoints: ";
   std::cout << player1.GetHitPoints() << ", Mana: " << player1.GetMana();
   std::cout << ", First Card in Hand: " << player1.ShowHand().at(0)->GetCardName() << "\n";
@@ -32,36 +34,29 @@ void GameEngine::GameLoop()
   std::cout << "Player 2 info: HitPoints: ";
   std::cout << player2.GetHitPoints() << ", Mana: " << player2.GetMana();
   std::cout << ", First Card in Hand: " << player2.ShowHand().at(0)->GetCardName() << "\n";
-
+*/
 //game loop
-int turn = 1;
+  turn = 1;
+  player_in_turn = 0;
   while(!die) {
     StartTurn();
-    std::cout << "Player 1 info: Mana: " << player1.GetMana() << "\n";
-    std::cout << "Player 2 info: Mana: " << player2.GetMana() << "\n";
-    EndTurn();
-    ++turn;
-
-    //run ten turns at this point.
-    if (turn > 10)
-    {
-      die = true;
-    }
-
+  //  response = ui.DrawBoard(player1.GetHitPoints(), player1.GetMana(), player1.ShowHand(), player2.GetHitPoints(), player2.GetMana(), player2.ShowHand());
+    response = ui.DrawBoard(&player1, &player2, &game_board);
+    UiEvent(response);
   }
 }
 
 void GameEngine::InitGame()
 {
-  //Set-up player 1 for game
-  InitPlayer(&player1);
-  //Set-up player 2 for game
-  InitPlayer(&player2);
+  for (uint i = 0; i < players.size(); ++i)
+  {
+    InitPlayer(players.at(i));
+  }
 }
 
 void GameEngine::StartTurn()
 {
-  for(uint i = 0; i < players.size(); ++i)
+  for (uint i = 0; i < players.size(); ++i)
   {
     players.at(i)->SetUpTurn();
   }
@@ -74,11 +69,40 @@ void GameEngine::EndTurn()
 
 void GameEngine::InitPlayer(Player* player)
 {
-//  player->SetDeck(card_deck);
   player->SetUpGame();
 }
-
+/*
 void GameEngine::PlayCard( Board* p_board, Player* p_player, Card* p_card, int slot)
 {
   p_board->AddCardToPlayerOne(p_player->player_hand.PlayCard(p_card), slot);
+}
+*/
+
+void GameEngine::UiEvent(std::vector<char> event)
+{
+//  std::cout << "P x-Play Card x, A x-Attack Card x, R-End turn, Q-Quit\n";
+  if (event.size() > 0)
+  {
+    switch(event.at(0))
+    {
+      case '?' :
+        ui.DisplayHelp();
+        break;
+      case 'P' :
+        std::cout << "\nP-pressed";
+//        game_board.AddCardToPlayer(player_in_turn, players.at(player_in_turn)->PlayCard(event.at(1)));
+        break;
+      case 'A' :
+        std::cout << "\nA-pressed";
+        break;
+      case 'R' :
+        EndTurn();
+        ++turn;
+        break;
+      case 'Q' :
+        die = true;
+        break;
+    }
+  }
+
 }

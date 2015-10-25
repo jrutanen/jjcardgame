@@ -10,6 +10,9 @@ class Board
     Board();
     virtual ~Board();
     void AddCardToPlayerOne(Card* card, int slot);
+    void AddCardToPlayer(int player, Card* p_card, int slot);
+    void AddCardToPlayer(int player, Card* p_card);
+    std::vector<Card*> GetCardsForPlayer(int player);
   protected:
   private:
       Card* cards_on_board_player[2][5];
@@ -18,6 +21,7 @@ class Board
       std::vector<Card*> cards_in_board_opp;
       std::vector<Card*> cards_in_graveyard_own;
       std::vector<Card*> cards_in_graveyard_opp;
+      std::vector<std::vector<Card*>> cards_on_board;
 };
 
 #endif // BOARD_H

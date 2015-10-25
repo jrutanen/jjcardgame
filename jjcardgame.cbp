@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 					<Add directory="include" />
 				</Compiler>
@@ -23,6 +24,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=c++11" />
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
@@ -44,6 +46,7 @@
 		<Unit filename="include/JJCardGame.h" />
 		<Unit filename="include/MonsterCard.h" />
 		<Unit filename="include/Player.h" />
+		<Unit filename="include/UiCmdLine.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Board.cpp" />
 		<Unit filename="src/Card.cpp" />
@@ -54,6 +57,7 @@
 		<Unit filename="src/Hero.cpp" />
 		<Unit filename="src/MonsterCard.cpp" />
 		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/UiCmdLine.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
