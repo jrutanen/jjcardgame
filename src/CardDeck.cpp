@@ -4,42 +4,48 @@ CardDeck::CardDeck()
 {
   //ctor
   //Initialize card vector with five cards for test purposes
-  card_one.SetCardName("Mummy");
-  card_one.SetCastingCost(1);
-  AddCard(&card_one);
-  card_two.SetCardName("Vampire");
-  card_two.SetCastingCost(2);
-  AddCard(&card_two);
-  card_three.SetCardName("Werewolf");
-  card_three.SetCastingCost(1);
-  AddCard(&card_three);
-  card_four.SetCardName("Cthulhu");
-  card_four.SetCastingCost(9);
-  AddCard(&card_four);
-  card_five.SetCardName("Mummy");
-  card_five.SetCastingCost(1);
-  AddCard(&card_five);
-  card_six.SetCardName("Mummy");
-  card_six.SetCastingCost(1);
-  AddCard(&card_six);
-  card_seven.SetCardName("Werewolf");
-  card_seven.SetCastingCost(1);
-  AddCard(&card_seven);
-  card_eight.SetCardName("Rat");
-  card_eight.SetCastingCost(1);
-  AddCard(&card_eight);
-  card_nine.SetCardName("Mummy");
-  card_nine.SetCastingCost(1);
-  AddCard(&card_nine);
-  card_ten.SetCardName("Ghoul");
-  card_ten.SetCastingCost(3);
-  AddCard(&card_ten);
-  card_eleven.SetCardName("Vampire");
-  card_eleven.SetCastingCost(2);
-  AddCard(&card_eleven);
-  card_twelve.SetCardName("Ghoul");
-  card_twelve.SetCastingCost(3);
-  AddCard(&card_twelve);
+  p_card_one = new Card();
+  p_card_one->SetCardName("Mummy");
+  p_card_one->SetCastingCost(1);
+  AddCard(p_card_one);
+  p_card_two = new Card();
+  p_card_two->SetCardName("Vampire");
+  p_card_two->SetCastingCost(2);
+  AddCard(p_card_two);
+  p_card_three = new Card();
+  p_card_three->SetCardName("Werewolf");
+  p_card_three->SetCastingCost(1);
+  AddCard(p_card_three);
+  p_card_four = new Card();
+  p_card_four->SetCardName("Cthulhu");
+  p_card_four->SetCastingCost(9);
+  AddCard(p_card_four);
+  p_card_five= new Card();
+  p_card_five->SetCardName("Mummy");
+  p_card_five->SetCastingCost(1);
+  AddCard(p_card_five);
+/*  p_card_six.SetCardName("Mummy");
+  p_card_six.SetCastingCost(1);
+  AddCard(p_card_six);
+  p_card_seven.SetCardName("Werewolf");
+  p_card_seven.SetCastingCost(1);
+  AddCard(p_card_seven);
+  p_card_eight.SetCardName("Rat");
+  p_card_eight.SetCastingCost(1);
+  AddCard(p_card_eight);
+  p_card_nine.SetCardName("Mummy");
+  p_card_nine.SetCastingCost(1);
+  AddCard(p_card_nine);
+  p_card_ten.SetCardName("Ghoul");
+  p_card_ten.SetCastingCost(3);
+  AddCard(p_card_ten);
+  p_card_eleven.SetCardName("Vampire");
+  p_card_eleven.SetCastingCost(2);
+  AddCard(p_card_eleven);
+  p_card_twelve.SetCardName("Ghoul");
+  p_card_twelve.SetCastingCost(3);
+  AddCard(p_card_twelve);
+*/
 }
 
 CardDeck::~CardDeck()

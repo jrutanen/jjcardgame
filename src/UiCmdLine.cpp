@@ -59,11 +59,11 @@ std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board, int
   std::cout << "|==============================================|\n";
   if (active_player == 0)
   {
-    std::cout << " *Player 1\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+    std::cout << " *" << p1->GetName() << "\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
   }
   else
   {
-    std::cout << " Player 1\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+    std::cout << " " << p1->GetName() << "\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
   }
   std::cout << "  Graveyard:\n";
   std::cout << "  Hand: " << HandToString(p1->ShowHand()) << "\n";
@@ -77,11 +77,11 @@ std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board, int
   std::cout << "  Graveyard:\n";
   if (active_player == 1)
   {
-    std::cout << " *Player 2\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+    std::cout << " *" << p2->GetName() << "\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
   }
   else
   {
-    std::cout << " Player 2\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+    std::cout << " " << p2->GetName() << "\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
   }
   std::cout << "|==============================================|\n";
   std::cout << "  P x-Play Card x, A x y -Attack Card x with y, R-End turn, Q-Quit\n";
@@ -125,14 +125,16 @@ std::string UiCmdLine::HandToString(std::vector<Card*> hand)
   for (uint i = 0; i < hand.size(); ++i)
   {
     std::ostringstream ss;
+    std::ostringstream bb;
     ss << (i + 1);
     if(hand.at(i) != nullptr)
     {
       hand_str += ss.str() + ":" + hand.at(i)->GetCardName() + " (";
-      ss << hand.at(i)->GetCastingCost() << ")";
+      bb << (hand.at(i)->GetCastingCost());
+      hand_str += bb.str() + ")";
       if (i < hand.size()-1)
       {
-        hand_str += ss.str() + ", ";
+        hand_str += ", ";
       }
     }
   }

@@ -3,16 +3,18 @@
 Player::Player()
 {
   //ctor
+  p_card_deck = new CardDeck();
   hit_points = 40;
   player_name = "Player 1";
   player_mana_points = 0;
   available_mana = 0;
-  SetDeck(&card_deck);
+//  SetDeck(&card_deck);
 }
 
 Player::~Player()
 {
     //dtor
+    delete p_card_deck;
 }
 
 void Player::AddHitPoints(int points)
@@ -45,7 +47,7 @@ void Player::SetDeck(CardDeck* p_deck)
   p_card_deck = p_deck;
 }
 
-void Player:: ShuffleDeck()
+void Player::ShuffleDeck()
 {
   p_card_deck->Shuffle();
 }

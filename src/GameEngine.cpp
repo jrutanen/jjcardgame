@@ -3,14 +3,20 @@
 GameEngine::GameEngine()
 {
     //ctor
+    p_player1 = new Player();
+    p_player2 = new Player();
+    p_player1->SetName("Jani");
+    p_player2->SetName("Janne");
     //add players to the players vector
-    players.push_back(&player1);
-    players.push_back(&player2);
+    players.push_back(p_player1);
+    players.push_back(p_player2);
 }
 
 GameEngine::~GameEngine()
 {
     //dtor
+    delete p_player1;
+    delete p_player2;
 }
 
 void GameEngine::Run()
@@ -41,7 +47,7 @@ void GameEngine::GameLoop()
   while(!die) {
     StartTurn();
   //  response = ui.DrawBoard(player1.GetHitPoints(), player1.GetMana(), player1.ShowHand(), player2.GetHitPoints(), player2.GetMana(), player2.ShowHand());
-    response = ui.DrawBoard(&player1, &player2, &game_board, player_in_turn);
+    response = ui.DrawBoard(p_player1, p_player2, &game_board, player_in_turn);
     UiEvent(response);
   }
 }
@@ -56,10 +62,17 @@ void GameEngine::InitGame()
 
 void GameEngine::StartTurn()
 {
-  for (uint i = 0; i < players.size(); ++i)
-  {
-    players.at(i)->SetUpTurn();
-  }
+//  for (uint i = 0; i < players.size(); ++i)
+//  {
+    if (player_in_turn == 0)
+    {
+      p_player1->SetUpTurn();
+    }
+    else
+    {
+      p_player2->SetUpTurn();
+    }
+ // }
 }
 
 void GameEngine::EndTurn()

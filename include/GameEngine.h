@@ -20,8 +20,8 @@ class GameEngine
         void GameLoop();
         void StartTurn();
         void EndTurn();
-        Player player1;
-        Player player2;
+        Player* p_player1;
+        Player* p_player2;
         void InitGame();
         void InitPlayer(Player* player);
         Board game_board;

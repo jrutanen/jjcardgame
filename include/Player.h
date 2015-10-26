@@ -42,7 +42,6 @@ class Player
         CardDeck card_deck;
         Hero* p_player_hero;
         std::vector<Card*> cards_in_hand; //moved here from Hand.h
-
 };
 
 #endif // PLAYER_H
