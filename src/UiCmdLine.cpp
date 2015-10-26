@@ -51,13 +51,20 @@ std::vector<char> UiCmdLine::DrawBoard(int p1_hp, int p1_mana, std::vector<Card*
   return response;
 }
 
-std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board)
+std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board, int active_player)
 {
   Clear();
   std::vector<char> response;
   std::string input;
   std::cout << "|==============================================|\n";
-  std::cout << " Player 1\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+  if (active_player == 0)
+  {
+    std::cout << " *Player 1\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+  }
+  else
+  {
+    std::cout << " Player 1\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+  }
   std::cout << "  Graveyard:\n";
   std::cout << "  Hand: " << HandToString(p1->ShowHand()) << "\n";
   std::cout << "\n";
@@ -68,9 +75,16 @@ std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board)
   std::cout << "\n";
   std::cout << "  Hand: " << HandToString(p2->ShowHand()) << "\n";
   std::cout << "  Graveyard:\n";
-  std::cout << " Player 2\tHP: " << p2->GetHitPoints() << "\tMana: " << p2->GetMana() << "\n";
+  if (active_player == 1)
+  {
+    std::cout << " *Player 2\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+  }
+  else
+  {
+    std::cout << " Player 2\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+  }
   std::cout << "|==============================================|\n";
-  std::cout << "  P x-Play Card x, A x-Attack Card x, R-End turn, Q-Quit\n";
+  std::cout << "  P x-Play Card x, A x y -Attack Card x with y, R-End turn, Q-Quit\n";
   std::cout << "  Give your command: ";
   while (getline(std::cin, input) && input.empty()) {
         std::cout << "\n  Please give a command.\n"
@@ -115,8 +129,11 @@ std::string UiCmdLine::HandToString(std::vector<Card*> hand)
     if(hand.at(i) != nullptr)
     {
       hand_str += ss.str() + ":" + hand.at(i)->GetCardName() + " (";
-      ss << hand.at(i)->GetCastingCost();
-      hand_str += ss.str() + ")\t";
+      ss << hand.at(i)->GetCastingCost() << ")";
+      if (i < hand.size()-1)
+      {
+        hand_str += ss.str() + ", ";
+      }
     }
   }
   return hand_str;

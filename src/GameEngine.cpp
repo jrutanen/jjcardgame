@@ -41,7 +41,7 @@ void GameEngine::GameLoop()
   while(!die) {
     StartTurn();
   //  response = ui.DrawBoard(player1.GetHitPoints(), player1.GetMana(), player1.ShowHand(), player2.GetHitPoints(), player2.GetMana(), player2.ShowHand());
-    response = ui.DrawBoard(&player1, &player2, &game_board);
+    response = ui.DrawBoard(&player1, &player2, &game_board, player_in_turn);
     UiEvent(response);
   }
 }
@@ -96,6 +96,14 @@ void GameEngine::UiEvent(std::vector<char> event)
         std::cout << "\nA-pressed";
         break;
       case 'R' :
+        if (player_in_turn == 1)
+        {
+          player_in_turn = 0;
+        }
+        else
+        {
+          player_in_turn = 1;
+        }
         EndTurn();
         ++turn;
         break;
