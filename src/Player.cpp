@@ -90,11 +90,22 @@ void Player::ReduceAvailableMana(int mana_points)
 {
   available_mana -= mana_points;
 }
+void Player::AddAvailableMana(int mana_points)
+{
+  available_mana += mana_points;
+}
 
+int Player::GetAvailableMana()
+{
+  return available_mana;
+}
 void Player::SetUpTurn()
 {
   //add one mana point to the player mana points
   AddMana(1);
+  available_mana = player_mana_points;
+  // draw new card every turn
+  DrawCard();
 }
 
 void Player::SetUpGame()
@@ -117,4 +128,9 @@ Card* Player::PlayCard(int card_nbr)
   Card* played_card = cards_in_hand.at(card_nbr);
   cards_in_hand.erase(cards_in_hand.begin() + card_nbr);
   return played_card;
+}
+
+Card* Player::CardInHand(int card_nbr)
+{
+  return cards_in_hand.at(card_nbr);
 }

@@ -28,10 +28,13 @@ class Player
         void AddMana(int mana_points);
         int GetMana();
         void ReduceAvailableMana(int mana_points);
+        void AddAvailableMana(int mana_points);
+        int GetAvailableMana();
         void SetUpTurn();
         void SetUpGame();
         Hand player_hand;
         Card* PlayCard(int card_nbr);
+        Card* CardInHand(int card_nbr);
     protected:
     private:
         int hit_points;

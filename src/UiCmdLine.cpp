@@ -59,11 +59,13 @@ std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board, int
   std::cout << "|==============================================|\n";
   if (active_player == 0)
   {
-    std::cout << " *" << p1->GetName() << "\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+    std::cout << " *" << p1->GetName() << "\tHP: " << p1->GetHitPoints() << "\tMana: "
+              << p1->GetAvailableMana() << "(" << p1->GetMana() << ")\n";
   }
   else
   {
-    std::cout << "  " << p1->GetName() << "\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+    std::cout << "  " << p1->GetName() << "\tHP: " << p1->GetHitPoints() << "\tMana: "
+              << p1->GetAvailableMana() << "(" << p1->GetMana() << ")\n";
   }
   std::cout << "  Graveyard:\n";
   std::cout << "  Hand: " << HandToString(p1->ShowHand()) << "\n";
@@ -77,11 +79,13 @@ std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board, int
   std::cout << "  Graveyard:\n";
   if (active_player == 1)
   {
-    std::cout << " *" << p2->GetName() << "\tHP: " << p2->GetHitPoints() << "\tMana: " << p2->GetMana() << "\n";
+    std::cout << " *" << p2->GetName() << "\tHP: " << p2->GetHitPoints() << "\tMana: "
+              << p2->GetAvailableMana() <<"(" << p2->GetMana() << ")\n";
   }
   else
   {
-    std::cout << "  " << p2->GetName() << "\tHP: " << p2->GetHitPoints() << "\tMana: " << p2->GetMana() << "\n";
+    std::cout << "  " << p2->GetName() << "\tHP: " << p2->GetHitPoints() << "\tMana: "
+              << p2->GetAvailableMana() <<"(" << p2->GetMana() << ")\n";
   }
   std::cout << "|==============================================|\n";
   std::cout << "  P x-Play Card x, A x y -Attack Card x with y, R-End turn, Q-Quit\n";
@@ -126,7 +130,7 @@ std::string UiCmdLine::HandToString(std::vector<Card*> hand)
   {
     std::ostringstream ss;
     std::ostringstream bb;
-    ss << (i + 1);
+    ss << (i);
     if(hand.at(i) != nullptr)
     {
       hand_str += ss.str() + ":" + hand.at(i)->GetCardName() + " (";

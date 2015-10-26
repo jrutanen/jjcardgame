@@ -85,16 +85,33 @@ void GameEngine::UiEvent(std::vector<char> event)
     switch(event.at(0))
     {
       case '?' :
+      {
         ui.DisplayHelp();
         break;
+      }
       case 'P' :
-        std::cout << "\nP-pressed";
-//        game_board.AddCardToPlayer(player_in_turn, players.at(player_in_turn)->PlayCard(event.at(1)));
+      {
+        //std::ostringstream card << event.at(1) ;
+        int card_nbr = (int)event.at(1)-'0';
+        if (players.at(player_in_turn)->CardInHand(card_nbr)->GetCastingCost() > players.at(player_in_turn)->GetAvailableMana())
+        {
+           //not enough mana
+        }
+        else
+        {
+          Card* p_card = players.at(player_in_turn)->PlayCard(card_nbr); //p_player1->PlayCard(0);
+          game_board.AddCardToPlayer(player_in_turn, p_card);
+          players.at(player_in_turn)->ReduceAvailableMana(p_card->GetCastingCost());
+        }
         break;
+      }
       case 'A' :
+      {
         std::cout << "\nA-pressed";
         break;
+      }
       case 'R' :
+      {
         if (player_in_turn == 1)
         {
           player_in_turn = 0;
@@ -107,9 +124,12 @@ void GameEngine::UiEvent(std::vector<char> event)
         ++turn;
         players.at(player_in_turn)->SetUpTurn();
         break;
+      }
       case 'Q' :
+      {
         die = true;
         break;
+      }
     }
   }
 
