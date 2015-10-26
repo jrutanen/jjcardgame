@@ -32,21 +32,13 @@ void GameEngine::GameLoop()
 
   //initialize game components (board, player, etc.)
   InitGame();
-/*
-  std::cout << "Player 1 info: HitPoints: ";
-  std::cout << player1.GetHitPoints() << ", Mana: " << player1.GetMana();
-  std::cout << ", First Card in Hand: " << player1.ShowHand().at(0)->GetCardName() << "\n";
-
-  std::cout << "Player 2 info: HitPoints: ";
-  std::cout << player2.GetHitPoints() << ", Mana: " << player2.GetMana();
-  std::cout << ", First Card in Hand: " << player2.ShowHand().at(0)->GetCardName() << "\n";
-*/
-//game loop
+  //game loop
   turn = 1;
   player_in_turn = 0;
-  while(!die) {
-    StartTurn();
-  //  response = ui.DrawBoard(player1.GetHitPoints(), player1.GetMana(), player1.ShowHand(), player2.GetHitPoints(), player2.GetMana(), player2.ShowHand());
+  //set-up first turn
+  players.at(player_in_turn)->SetUpTurn();
+  while(!die)
+  {
     response = ui.DrawBoard(p_player1, p_player2, &game_board, player_in_turn);
     UiEvent(response);
   }
@@ -84,12 +76,6 @@ void GameEngine::InitPlayer(Player* player)
 {
   player->SetUpGame();
 }
-/*
-void GameEngine::PlayCard( Board* p_board, Player* p_player, Card* p_card, int slot)
-{
-  p_board->AddCardToPlayerOne(p_player->player_hand.PlayCard(p_card), slot);
-}
-*/
 
 void GameEngine::UiEvent(std::vector<char> event)
 {
@@ -119,6 +105,7 @@ void GameEngine::UiEvent(std::vector<char> event)
         }
         EndTurn();
         ++turn;
+        players.at(player_in_turn)->SetUpTurn();
         break;
       case 'Q' :
         die = true;

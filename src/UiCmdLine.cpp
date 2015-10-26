@@ -63,7 +63,7 @@ std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board, int
   }
   else
   {
-    std::cout << " " << p1->GetName() << "\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+    std::cout << "  " << p1->GetName() << "\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
   }
   std::cout << "  Graveyard:\n";
   std::cout << "  Hand: " << HandToString(p1->ShowHand()) << "\n";
@@ -77,11 +77,11 @@ std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board, int
   std::cout << "  Graveyard:\n";
   if (active_player == 1)
   {
-    std::cout << " *" << p2->GetName() << "\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+    std::cout << " *" << p2->GetName() << "\tHP: " << p2->GetHitPoints() << "\tMana: " << p2->GetMana() << "\n";
   }
   else
   {
-    std::cout << " " << p2->GetName() << "\tHP: " << p1->GetHitPoints() << "\tMana: " << p1->GetMana() << "\n";
+    std::cout << "  " << p2->GetName() << "\tHP: " << p2->GetHitPoints() << "\tMana: " << p2->GetMana() << "\n";
   }
   std::cout << "|==============================================|\n";
   std::cout << "  P x-Play Card x, A x y -Attack Card x with y, R-End turn, Q-Quit\n";

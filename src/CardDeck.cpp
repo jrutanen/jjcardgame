@@ -73,14 +73,7 @@ void CardDeck::Shuffle()
     //if there is more than one card to select from
     if (temp_deck.size() > 1)
     {
-      // define the range
-//      std::default_random_engine generator;
-//      std::uniform_int_distribution<int> distribution(0,temp_deck.size()-1);
       card_pos = rand() % (temp_deck.size()-1);
-//      card_pos = distribution(generator);
-//      std::uniform_int_distribution<> distr(0, temp_deck.size() - 1);
-      //generate random number at assign it to card_pos
-      //card_pos = distr(eng);
       shuffled_deck.push_back(temp_deck.at(card_pos));
       temp_deck.erase(temp_deck.begin() + card_pos);
     }
