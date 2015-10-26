@@ -1,6 +1,6 @@
 # depslib dependency file v1.0
-1445798117 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\main.cpp
-	<iostream>
+1445897661 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\main.cpp
+	<random>
 	"GameEngine.h"
 
 1445884720 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\gameengine.h
@@ -21,7 +21,7 @@
 	"Card.h"
 	"JJCardGame.h"
 
-1445885949 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\carddeck.h
+1445897083 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\carddeck.h
 	<vector>
 	<random>
 	<ctime>
@@ -56,7 +56,7 @@
 1445193578 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\card.cpp
 	"Card.h"
 
-1445885986 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\carddeck.cpp
+1445897295 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\carddeck.cpp
 	"CardDeck.h"
 
 1445192993 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\datamanager.cpp
@@ -182,6 +182,6 @@
 	"Player.h"
 	"Board.h"
 
-1445887037 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\uicmdline.cpp
+1445887246 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\uicmdline.cpp
 	"UiCmdLine.h"
 

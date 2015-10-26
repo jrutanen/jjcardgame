@@ -66,7 +66,7 @@ void CardDeck::Shuffle()
   int card_pos = -1;
 
   // seed the random number generator
-  std::mt19937 eng(time(0));
+//  std::mt19937 eng(time(0));
 
   for(uint i = 0; i < cards.size(); ++i)
   {
@@ -74,9 +74,13 @@ void CardDeck::Shuffle()
     if (temp_deck.size() > 1)
     {
       // define the range
-      std::uniform_int_distribution<> distr(0, temp_deck.size() - 1);
+//      std::default_random_engine generator;
+//      std::uniform_int_distribution<int> distribution(0,temp_deck.size()-1);
+      card_pos = rand() % (temp_deck.size()-1);
+//      card_pos = distribution(generator);
+//      std::uniform_int_distribution<> distr(0, temp_deck.size() - 1);
       //generate random number at assign it to card_pos
-      card_pos = distr(eng);
+      //card_pos = distr(eng);
       shuffled_deck.push_back(temp_deck.at(card_pos));
       temp_deck.erase(temp_deck.begin() + card_pos);
     }
