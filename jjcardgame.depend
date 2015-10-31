@@ -86,48 +86,49 @@
 
 1445288315 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\jjcardgame.h
 
-1445197364 source:c:\newcardgame\jjcardgame\src\card.cpp
+1445193764 source:c:\newcardgame\jjcardgame\src\card.cpp
 	"Card.h"
 
-1445364166 c:\newcardgame\jjcardgame\include\card.h
+1445360566 c:\newcardgame\jjcardgame\include\card.h
 	<string>
 	"JJCardGame.h"
 
-1445364166 c:\newcardgame\jjcardgame\include\jjcardgame.h
+1445360566 c:\newcardgame\jjcardgame\include\jjcardgame.h
 
-1445197114 source:c:\newcardgame\jjcardgame\src\datamanager.cpp
+1445193514 source:c:\newcardgame\jjcardgame\src\datamanager.cpp
 	"DataManager.h"
 
-1445364166 c:\newcardgame\jjcardgame\include\datamanager.h
+1445360566 c:\newcardgame\jjcardgame\include\datamanager.h
 	"JJCardGame.h"
 
-1445121143 source:c:\newcardgame\jjcardgame\src\hero.cpp
+1445117543 source:c:\newcardgame\jjcardgame\src\hero.cpp
 	"Hero.h"
 
-1445364166 c:\newcardgame\jjcardgame\include\hero.h
+1445360566 c:\newcardgame\jjcardgame\include\hero.h
 	"JJCardGame.h"
 
-1445197364 source:c:\newcardgame\jjcardgame\src\monstercard.cpp
+1445193764 source:c:\newcardgame\jjcardgame\src\monstercard.cpp
 	"MonsterCard.h"
 
-1445364166 c:\newcardgame\jjcardgame\include\monstercard.h
+1445360566 c:\newcardgame\jjcardgame\include\monstercard.h
 	"Card.h"
 	"JJCardGame.h"
 	<string>
 
-1445364166 source:c:\newcardgame\jjcardgame\main.cpp
-	<iostream>
+1445964887 source:c:\newcardgame\jjcardgame\main.cpp
+	<random>
 	"GameEngine.h"
 
-1445364166 c:\newcardgame\jjcardgame\include\gameengine.h
+1445964887 c:\newcardgame\jjcardgame\include\gameengine.h
 	"JJCardGame.h"
 	"Player.h"
 	"CardDeck.h"
 	"Board.h"
+	"UiCmdLine.h"
 	<iostream>
 	<vector>
 
-1445373670 c:\newcardgame\jjcardgame\include\player.h
+1446311448 c:\newcardgame\jjcardgame\include\player.h
 	<string>
 	<vector>
 	"CardDeck.h"
@@ -136,7 +137,7 @@
 	"Card.h"
 	"JJCardGame.h"
 
-1445364166 c:\newcardgame\jjcardgame\include\carddeck.h
+1445964887 c:\newcardgame\jjcardgame\include\carddeck.h
 	<vector>
 	<random>
 	<ctime>
@@ -146,30 +147,30 @@
 	<string>
 	<sstream>
 
-1445364166 c:\newcardgame\jjcardgame\include\hand.h
+1445360566 c:\newcardgame\jjcardgame\include\hand.h
 	<vector>
 	<algorithm>
 	"Card.h"
 	"JJCardGame.h"
 
-1445635573 c:\newcardgame\jjcardgame\include\board.h
+1445881310 c:\newcardgame\jjcardgame\include\board.h
 	"JJCardGame.h"
 	<vector>
 	"Card.h"
 
-1445367548 source:c:\newcardgame\jjcardgame\src\board.cpp
+1445881310 source:c:\newcardgame\jjcardgame\src\board.cpp
 	"Board.h"
 
-1445364166 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
+1446317874 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
 	"GameEngine.h"
 
-1445205690 source:c:\newcardgame\jjcardgame\src\hand.cpp
+1445202090 source:c:\newcardgame\jjcardgame\src\hand.cpp
 	"Hand.h"
 
-1445370067 source:c:\newcardgame\jjcardgame\src\carddeck.cpp
+1445964887 source:c:\newcardgame\jjcardgame\src\carddeck.cpp
 	"CardDeck.h"
 
-1445373904 source:c:\newcardgame\jjcardgame\src\player.cpp
+1446318396 source:c:\newcardgame\jjcardgame\src\player.cpp
 	"Player.h"
 
 1445883221 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\uicmdline.h
@@ -183,5 +184,18 @@
 	"Board.h"
 
 1445900791 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\uicmdline.cpp
+	"UiCmdLine.h"
+
+1445883490 c:\newcardgame\jjcardgame\include\uicmdline.h
+	<iostream>
+	<string>
+	<vector>
+	<cstdlib>
+	<sstream>
+	"Card.h"
+	"Player.h"
+	"Board.h"
+
+1445964887 source:c:\newcardgame\jjcardgame\src\uicmdline.cpp
 	"UiCmdLine.h"
 

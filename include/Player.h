@@ -30,6 +30,7 @@ class Player
         void ReduceAvailableMana(int mana_points);
         void AddAvailableMana(int mana_points);
         int GetAvailableMana();
+        int GetCardsInHand();
         void SetUpTurn();
         void SetUpGame();
         Hand player_hand;
@@ -40,6 +41,7 @@ class Player
         int hit_points;
         int player_mana_points;
         int available_mana;
+        int no_of_cards_in_hand;
         std::string player_name;
         CardDeck* p_card_deck;
         CardDeck card_deck;
