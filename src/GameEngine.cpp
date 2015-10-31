@@ -92,7 +92,11 @@ void GameEngine::UiEvent(std::vector<char> event)
       case 'P' :
       {
         //std::ostringstream card << event.at(1) ;
+
         int card_nbr = (int)event.at(1)-'0';
+        if (card_nbr < players.at(player_in_turn)->GetCardsInHand())
+        {
+
         if (players.at(player_in_turn)->CardInHand(card_nbr)->GetCastingCost() > players.at(player_in_turn)->GetAvailableMana())
         {
            //not enough mana
@@ -102,6 +106,7 @@ void GameEngine::UiEvent(std::vector<char> event)
           Card* p_card = players.at(player_in_turn)->PlayCard(card_nbr); //p_player1->PlayCard(0);
           game_board.AddCardToPlayer(player_in_turn, p_card);
           players.at(player_in_turn)->ReduceAvailableMana(p_card->GetCastingCost());
+        }
         }
         break;
       }

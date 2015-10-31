@@ -99,6 +99,12 @@ int Player::GetAvailableMana()
 {
   return available_mana;
 }
+
+int Player::GetCardsInHand()
+{
+  return cards_in_hand.size();
+}
+
 void Player::SetUpTurn()
 {
   //add one mana point to the player mana points
@@ -128,7 +134,7 @@ Card* Player::PlayCard(int card_nbr)
   Card* played_card = cards_in_hand.at(card_nbr);
   cards_in_hand.erase(cards_in_hand.begin() + card_nbr);
   return played_card;
-}
+  }
 
 Card* Player::CardInHand(int card_nbr)
 {
