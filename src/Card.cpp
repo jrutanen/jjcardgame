@@ -40,3 +40,47 @@ int Card::GetCastingCost()
 {
   return casting_cost;
 }
+
+//This is copy paste from Monstercard
+
+//Get and Set functions
+void Card::SetCardAttack(int setattack)
+{
+  card_attack = setattack;
+}
+
+int Card::GetCardAttack()
+{
+  return card_attack;
+}
+
+void Card::SetCardDefence(int setdefence)
+{
+  card_defence = setdefence;
+}
+
+int Card::GetCardDefence()
+{
+  return card_defence;
+}
+
+//Attack and Defence additions and reductions
+void Card::AddAttack(int attack)
+{
+  card_attack = card_attack + attack;
+}
+
+void Card::ReduceAttack(int attack)
+{
+  card_attack = card_attack - attack;
+}
+void Card::AddDefence(int defence)
+{
+  card_defence = card_defence + defence;
+}
+
+void Card::ReduceDefence(int defence)
+{
+  card_defence = card_defence - defence;
+}
+//End copy paste

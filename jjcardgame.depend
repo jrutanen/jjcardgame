@@ -86,10 +86,10 @@
 
 1445288315 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\jjcardgame.h
 
-1445193764 source:c:\newcardgame\jjcardgame\src\card.cpp
+1446574894 source:c:\newcardgame\jjcardgame\src\card.cpp
 	"Card.h"
 
-1445360566 c:\newcardgame\jjcardgame\include\card.h
+1446574874 c:\newcardgame\jjcardgame\include\card.h
 	<string>
 	"JJCardGame.h"
 
@@ -110,7 +110,7 @@
 1445193764 source:c:\newcardgame\jjcardgame\src\monstercard.cpp
 	"MonsterCard.h"
 
-1445360566 c:\newcardgame\jjcardgame\include\monstercard.h
+1446575004 c:\newcardgame\jjcardgame\include\monstercard.h
 	"Card.h"
 	"JJCardGame.h"
 	<string>
@@ -161,13 +161,13 @@
 1445881310 source:c:\newcardgame\jjcardgame\src\board.cpp
 	"Board.h"
 
-1446317874 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
+1446579758 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
 	"GameEngine.h"
 
 1445202090 source:c:\newcardgame\jjcardgame\src\hand.cpp
 	"Hand.h"
 
-1445964887 source:c:\newcardgame\jjcardgame\src\carddeck.cpp
+1446576581 source:c:\newcardgame\jjcardgame\src\carddeck.cpp
 	"CardDeck.h"
 
 1446318396 source:c:\newcardgame\jjcardgame\src\player.cpp
@@ -196,6 +196,6 @@
 	"Player.h"
 	"Board.h"
 
-1445964887 source:c:\newcardgame\jjcardgame\src\uicmdline.cpp
+1446576388 source:c:\newcardgame\jjcardgame\src\uicmdline.cpp
 	"UiCmdLine.h"
 

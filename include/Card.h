@@ -16,11 +16,27 @@ class Card
         std::string card_class;
         void SetCastingCost(int cost);
         int GetCastingCost();
+        //This is copy paste from Monstercard
+
+        void AddAttack(int attack);
+        void AddDefence(int defence);
+        void ReduceAttack(int attack);
+        void ReduceDefence(int defence);
+        void SetCardAttack(int setattack);
+        void SetCardDefence(int setdefence);
+        int GetCardAttack();
+        int GetCardDefence();
+        //end copy paste
     protected:
         int casting_cost;
         std::string card_text;
         std::string card_name;
         std::string card_type;
+        //This is copy paste from Monstercard
+        int card_attack;
+        int card_defence;
+        std::string card_ability;
+         //end copy paste
     private:
 };
 
