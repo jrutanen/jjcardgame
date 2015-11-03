@@ -112,7 +112,15 @@ void GameEngine::UiEvent(std::vector<char> event)
       }
       case 'A' :
       {
+        //Only cards on board can attack each other
+        //Attack cards attack - Defending cards Defence = NewDefence for both cards. If defence < 0, then card is removed from the game
+        //ReduceDefence();
+        int card_nbr = (int)event.at(1)-'0';
+        //Here should be if sentence to check if you are trying to attack with a card on board to opponents cards on board
+
+       // ReduceDefence( );
         std::cout << "\nA-pressed";
+
         break;
       }
       case 'R' :

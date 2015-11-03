@@ -8,7 +8,6 @@
 class MonsterCard:Card
 {
     public:
-        MonsterCard();
         virtual ~MonsterCard();
         void AddAttack(int attack);
         void AddDefence(int defence);

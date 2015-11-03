@@ -14,41 +14,7 @@ void UiCmdLine::DrawBoard()
 {
 
 
-}
 
-std::vector<char> UiCmdLine::DrawBoard(int p1_hp, int p1_mana, std::vector<Card*> p1_hand, int p2_hp, int p2_mana, std::vector<Card*> p2_hand )
-{
-  Clear();
-  std::vector<char> response;
-  std::string input;
-  std::cout << "|==============================================|\n";
-  std::cout << "  Player 1\tHP: " << p1_hp << "\tMana: " << p1_mana << "\n";
-  std::cout << "  Graveyard:\n";
-  std::cout << "  Hand: " << HandToString(p1_hand) << "\n";
-  std::cout << "\n";
-  std::cout << "Board: " /*<< BoardToString(p1_board)*/<< "\n";
-  std::cout << "\n";
-  std::cout << "\n";
-  std::cout << "Board: " /*<< BoardToString(p2_board)*/<< "\n";
-  std::cout << "\n";
-  std::cout << "  Hand: " << HandToString(p2_hand) << "\n";
-  std::cout << "  Graveyard:\n";
-  std::cout << "  Player 2\tHP: " << p2_hp << "\tMana: " << p2_mana << "\n";
-  std::cout << "|==============================================|\n";
-  std::cout << "  P x-Play Card x, A x-Attack Card x, R-End turn, Q-Quit\n";
-  std::cout << "  Give your command: ";
-  while (getline(std::cin, input) && input.empty()) {
-        std::cout << "\n  Please give a command.\n"
-                  << "  Give your command: ";
-  }
-
-  for(char& c : input) {
-    if (!isspace(c))
-    {
-      response.push_back(c);
-    }
-  }
-  return response;
 }
 
 std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board, int active_player)
@@ -130,12 +96,16 @@ std::string UiCmdLine::HandToString(std::vector<Card*> hand)
   {
     std::ostringstream ss;
     std::ostringstream bb;
+    std::ostringstream aa;
+    std::ostringstream dd;
     ss << (i);
     if(hand.at(i) != nullptr)
     {
       hand_str += ss.str() + ":" + hand.at(i)->GetCardName() + " (";
       bb << (hand.at(i)->GetCastingCost());
-      hand_str += bb.str() + ")";
+      aa << (hand.at(i)->GetCardAttack());
+      dd << (hand.at(i)->GetCardDefence());
+      hand_str += bb.str() + ")" + aa.str() + "/" + dd.str();
       if (i < hand.size()-1)
       {
         hand_str += ", ";
