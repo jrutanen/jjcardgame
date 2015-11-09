@@ -7,7 +7,7 @@ Board::Board()
   std::vector<Card*> initial_vector;
 
   {
-    initial_vector.push_back(nullptr);
+  //  initial_vector.push_back(nullptr);
   }
   cards_on_board.push_back(initial_vector);
   cards_on_board.push_back(initial_vector);
@@ -37,4 +37,9 @@ void Board::AddCardToPlayer(int player, Card* p_card)
 std::vector<Card*> Board::GetCardsForPlayer(int player)
 {
   return cards_on_board.at(player);
+}
+
+int Board::GetCardsOnBoard()
+{
+  return cards_on_board.size();
 }
