@@ -39,7 +39,7 @@ std::vector<Card*> Board::GetCardsForPlayer(int player)
   return cards_on_board.at(player);
 }
 
-int Board::GetCardsOnBoard()
+int Board::GetCardsOnBoard(int player_nbr)
 {
-  return cards_on_board.size();
+  return cards_on_board.at(player_nbr).size();
 }
