@@ -5,7 +5,7 @@ Board::Board()
   //ctor
   //intialize vector with 5 slots for both players.
   std::vector<Card*> initial_vector;
-  for(int i = 0; i < 5; ++i)
+
   {
     initial_vector.push_back(nullptr);
   }
