@@ -114,20 +114,17 @@ void GameEngine::UiEvent(std::vector<char> event)
         //int Card::GetCardDefence(); Card::SetCardDefence(int setdefence)
       {
         int card_nbr1 = (int)event.at(1)-'0'; //input character number at position 1
-        if (card_nbr1 = false) //How to check card position is valid?
+        int card_nbr2 = (int)event.at(2)-'0'; //input character number at position 2
+        if (card_nbr1 < game_board.GetCardsOnBoard(player_in_turn))
         {
-         std::cout << "Invalid input";
+          std::cout << "GetCardsOnBoard 1 toimii!!!"; // std::cout << "Invalid input";
         }
-        int card_nbr2 = (int)event.at(2)-'0'; //input character number at position 3
-        if (card_nbr1 < cards_on_board.at(player_in_turn)->GetCardsOnBoard())//Only cards on board can attack, first parameter A X _ , needs to be valid
-        {
 
+        if (card_nbr2 < game_board.GetCardsOnBoard(player_in_turn))//Only cards on board can attack, first parameter A X _ , needs to be valid
+        {
+         std::cout << "GetCardsOnBoard 2 toimii!!!";
         }//Only valid targets are opponent player and defending creatures, second parameter A _ X needs to be valid
         //Attack cards attack - Defending cards Defence = NewDefence for both cards. If defence =< 0, then card is removed from the game
-
-
-
-
 
        // ReduceDefence( );
         std::cout << "\nA-pressed";
