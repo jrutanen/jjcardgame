@@ -7,7 +7,7 @@ GameEngine::GameEngine()
     p_player2 = new Player();
     p_player1->SetName("Jani");
     p_player2->SetName("Janne");
-    //add players to the players vector
+    //add to the players vector
     players.push_back(p_player1);
     players.push_back(p_player2);
 }
@@ -93,30 +93,39 @@ void GameEngine::UiEvent(std::vector<char> event)
       {
         //std::ostringstream card << event.at(1) ;
 
-        int card_nbr = (int)event.at(1)-'0';
-        if (card_nbr < players.at(player_in_turn)->GetCardsInHand())
+        int card_nbr = (int)event.at(1)-'0';  //In Ascii table character reduction, 0 is 48. card_nbr is input character number
+        if (card_nbr < players.at(player_in_turn)->GetCardsInHand()) //Only execute the code if cards in hand is higher than input character number, otherwise break
         {
 
-        if (players.at(player_in_turn)->CardInHand(card_nbr)->GetCastingCost() > players.at(player_in_turn)->GetAvailableMana())
+        if (players.at(player_in_turn)->CardInHand(card_nbr)->GetCastingCost() > players.at(player_in_turn)->GetAvailableMana()) //If the card that has been given as input casting cost is higher than available mana, then execute code
         {
            //not enough mana
         }
-        else
+        else  //Yes enough mana
         {
-          Card* p_card = players.at(player_in_turn)->PlayCard(card_nbr); //p_player1->PlayCard(0);
-          game_board.AddCardToPlayer(player_in_turn, p_card);
-          players.at(player_in_turn)->ReduceAvailableMana(p_card->GetCastingCost());
+          Card* p_card = players.at(player_in_turn)->PlayCard(card_nbr); //p_player1->PlayCard(0); Plays the card pointer
+          game_board.AddCardToPlayer(player_in_turn, p_card); //Adds the card to a his side on board
+          players.at(player_in_turn)->ReduceAvailableMana(p_card->GetCastingCost());  //Reduces the played cards Casting Cost
         }
         }
         break;
       }
-      case 'A' :
+      case 'A' : //commands to be used:; void Player::ReduceHitPoint(int points); int Player::GetHitPoints(); void Card::ReduceDefence(int defence); int Card::GetCardAttack()
+        //int Card::GetCardDefence(); Card::SetCardDefence(int setdefence)
       {
-        //Only cards on board can attack each other
-        //Attack cards attack - Defending cards Defence = NewDefence for both cards. If defence < 0, then card is removed from the game
-        //ReduceDefence();
-        int card_nbr = (int)event.at(1)-'0';
-        //Here should be if sentence to check if you are trying to attack with a card on board to opponents cards on board
+        int card_nbr1 = (int)event.at(1)-'0'; //input character number at position 1
+        if (card_nbr1 = false) //How to check card position is valid?
+        {
+         std::cout << "Invalid input";
+        }
+        int card_nbr2 = (int)event.at(2)-'0'; //input character number at position 3
+        //Only cards on board can attack, first parameter A X _ , needs to be valid
+        //Only valid targets are opponent player and defending creatures, second parameter A _ X needs to be valid
+        //Attack cards attack - Defending cards Defence = NewDefence for both cards. If defence =< 0, then card is removed from the game
+
+
+
+
 
        // ReduceDefence( );
         std::cout << "\nA-pressed";
