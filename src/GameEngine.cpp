@@ -119,8 +119,10 @@ void GameEngine::UiEvent(std::vector<char> event)
          std::cout << "Invalid input";
         }
         int card_nbr2 = (int)event.at(2)-'0'; //input character number at position 3
-        //Only cards on board can attack, first parameter A X _ , needs to be valid
-        //Only valid targets are opponent player and defending creatures, second parameter A _ X needs to be valid
+        if (card_nbr1 < cards_on_board.at(player_in_turn)->GetCardsOnBoard())//Only cards on board can attack, first parameter A X _ , needs to be valid
+        {
+
+        }//Only valid targets are opponent player and defending creatures, second parameter A _ X needs to be valid
         //Attack cards attack - Defending cards Defence = NewDefence for both cards. If defence =< 0, then card is removed from the game
 
 
