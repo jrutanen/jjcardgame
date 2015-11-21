@@ -23,6 +23,7 @@ class GameEngine
         Player* p_player1;
         Player* p_player2;
         void InitGame();
+        void ChangePlayerInTurn();
         void InitPlayer(Player* player);
         Board game_board;
 //        std::vector<Card> available_cards;

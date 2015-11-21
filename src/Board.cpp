@@ -24,10 +24,10 @@ void Board::AddCardToPlayerOne(Card* p_card, int slot)
 //  cards_on_board_player[0][slot] = p_card;
 }
 
-void Board::AddCardToPlayer(int player, Card* p_card, int slot)
-{
-  cards_on_board.at(player)[slot] = p_card;
-}
+//void Board::AddCardToPlayer(int player, Card* p_card, int slot)
+//{
+//  cards_on_board.at(player)[slot] = p_card;
+//}
 
 void Board::AddCardToPlayer(int player, Card* p_card)
 {
@@ -39,7 +39,8 @@ std::vector<Card*> Board::GetCardsForPlayer(int player)
   return cards_on_board.at(player);
 }
 
-int Board::GetCardsOnBoard(int player_nbr)
+int Board::NumberOfCardsOnBoard(int player_nbr)
 {
   return cards_on_board.at(player_nbr).size();
 }
+
