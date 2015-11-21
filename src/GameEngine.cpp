@@ -56,6 +56,18 @@ void GameEngine::ChangePlayerInTurn()
         }
 }
 
+int GameEngine::DefendingPlayer()
+{
+ if (player_in_turn == 1)
+        {
+          return 0;
+        }
+        else
+        {
+          return 1;
+        }
+}
+
 void GameEngine::InitGame()
 {
   for (uint i = 0; i < players.size(); ++i)
@@ -131,17 +143,17 @@ void GameEngine::UiEvent(std::vector<char> event)
         {
          // std::cout << "GetCardsOnBoard 1 toimii!!!"; // std::cout << "Invalid input";
 
-        ChangePlayerInTurn();  //Change to opposing board
-        if (card_nbr2 < game_board.NumberOfCardsOnBoard(player_in_turn))  //Only valid targets are opponent player and defending creatures, second parameter A _ X needs to be valid
+   //     ChangePlayerInTurn();  //Change to opposing board
+        if (card_nbr2 < game_board.NumberOfCardsOnBoard( DefendingPlayer() ))  //Only valid targets are opponent player and defending creatures, second parameter A _ X needs to be valid
         {
-         ChangePlayerInTurn();
+//         ChangePlayerInTurn();
          //std::cout << "GetCardsOnBoard 2 toimii!!!";
          int cardattack = 0;
          int carddefence = 0;
          int newdefence = 0;
          cardattack = game_board.GetCardsForPlayer(player_in_turn).at(card_nbr1)->GetCardAttack();
-         ChangePlayerInTurn();
-         carddefence = game_board.GetCardsForPlayer(player_in_turn).at(card_nbr2)->GetCardDefence();
+ //        ChangePlayerInTurn();
+         carddefence = game_board.GetCardsForPlayer( DefendingPlayer() ).at(card_nbr2)->GetCardDefence();
          newdefence = carddefence - cardattack;
           std::cout << "newdefence toimii!!!" << newdefence << std::endl;
          // std::cout << "GetCardAttack toimii!!!" << cardattack;
