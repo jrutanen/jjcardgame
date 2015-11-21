@@ -44,6 +44,18 @@ void GameEngine::GameLoop()
   }
 }
 
+void GameEngine::ChangePlayerInTurn()
+{
+ if (player_in_turn == 1)
+        {
+          player_in_turn = 0;
+        }
+        else
+        {
+          player_in_turn = 1;
+        }
+}
+
 void GameEngine::InitGame()
 {
   for (uint i = 0; i < players.size(); ++i)
@@ -113,34 +125,40 @@ void GameEngine::UiEvent(std::vector<char> event)
       case 'A' : //commands to be used:; void Player::ReduceHitPoint(int points); int Player::GetHitPoints(); void Card::ReduceDefence(int defence); int Card::GetCardAttack()
         //int Card::GetCardDefence(); Card::SetCardDefence(int setdefence)
       {
-        int card_nbr1 = (int)event.at(1)-'0'; //input character number at position 1
-        int card_nbr2 = (int)event.at(2)-'0'; //input character number at position 2
-        if (card_nbr1 < game_board.GetCardsOnBoard(player_in_turn))
+        int card_nbr1 = (int)event.at(1)-'0'; //input character number at position 1, own side of board
+        int card_nbr2 = (int)event.at(2)-'0'; //input character number at position 2, opponent side of board
+        if (card_nbr1 < game_board.NumberOfCardsOnBoard(player_in_turn))  //Only cards on board can attack, first parameter A X _ , needs to be valid
         {
-          std::cout << "GetCardsOnBoard 1 toimii!!!"; // std::cout << "Invalid input";
+         // std::cout << "GetCardsOnBoard 1 toimii!!!"; // std::cout << "Invalid input";
+
+        ChangePlayerInTurn();  //Change to opposing board
+        if (card_nbr2 < game_board.NumberOfCardsOnBoard(player_in_turn))  //Only valid targets are opponent player and defending creatures, second parameter A _ X needs to be valid
+        {
+         ChangePlayerInTurn();
+         //std::cout << "GetCardsOnBoard 2 toimii!!!";
+         int cardattack = 0;
+         int carddefence = 0;
+         int newdefence = 0;
+         cardattack = game_board.GetCardsForPlayer(player_in_turn).at(card_nbr1)->GetCardAttack();
+         ChangePlayerInTurn();
+         carddefence = game_board.GetCardsForPlayer(player_in_turn).at(card_nbr2)->GetCardDefence();
+         newdefence = carddefence - cardattack;
+          std::cout << "newdefence toimii!!!" << newdefence << std::endl;
+         // std::cout << "GetCardAttack toimii!!!" << cardattack;
+         //Attack cards attack - Defending cards Defence = NewDefence for both cards. If defence =< 0, then card is removed from the game
+         //cards_on_board.at(player)[slot]
+         //GetCardAttack();
+
+
         }
-
-        if (card_nbr2 < game_board.GetCardsOnBoard(player_in_turn))//Only cards on board can attack, first parameter A X _ , needs to be valid
-        {
-         std::cout << "GetCardsOnBoard 2 toimii!!!";
-        }//Only valid targets are opponent player and defending creatures, second parameter A _ X needs to be valid
-        //Attack cards attack - Defending cards Defence = NewDefence for both cards. If defence =< 0, then card is removed from the game
-
-       // ReduceDefence( );
+        }
         std::cout << "\nA-pressed";
 
         break;
       }
       case 'R' :
       {
-        if (player_in_turn == 1)
-        {
-          player_in_turn = 0;
-        }
-        else
-        {
-          player_in_turn = 1;
-        }
+        ChangePlayerInTurn();
         EndTurn();
         ++turn;
         players.at(player_in_turn)->SetUpTurn();

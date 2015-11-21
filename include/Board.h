@@ -13,7 +13,7 @@ class Board
     void AddCardToPlayer(int player, Card* p_card, int slot);
     void AddCardToPlayer(int player, Card* p_card);
     std::vector<Card*> GetCardsForPlayer(int player);
-    int GetCardsOnBoard(int player_nbr);
+    int NumberOfCardsOnBoard(int player_nbr);
   protected:
   private:
       Card* cards_on_board_player[2][5];
