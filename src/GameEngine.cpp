@@ -101,10 +101,10 @@ void GameEngine::InitPlayer(Player* player)
   player->SetUpGame();
 }
 
-void GameEngine::AttackOpponent(int opponent)
+void GameEngine::AttackPlayer(int player_nbr)
 {
 
-     int att_card_attack = 0;
+     //int att_card_attack = 0;
     // att_card_attack = game_board.GetCardsForPlayer(player_in_turn).at(att_card_nbr)->GetCardAttack();
 
       //players.at(DefendingPlayer())-> ReduceHitPoints(att_card_attack);
@@ -209,15 +209,16 @@ void GameEngine::UiEvent(std::vector<char> event)
         if (att_card_nbr < game_board.NumberOfCardsOnBoard(player_in_turn))  //Only cards on board can attack, first parameter A X _ , needs to be valid
         {
 
-      if (event.at(2) = 'O')
+      if (event.at(2) == 'O')
       {
-       AttackOpponent(DefendingPlayer());
+      AttackPlayer(DefendingPlayer());
       }
       else
       {
       AttackCard(att_card_nbr, def_card_nbr);
       }
-       break;
+        }
+      break;
       }
 
       case 'R' :
