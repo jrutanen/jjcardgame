@@ -98,6 +98,7 @@ std::string UiCmdLine::HandToString(std::vector<Card*> hand)
     std::ostringstream bb;
     std::ostringstream aa;
     std::ostringstream dd;
+    std::ostringstream active;
     ss << (i);
     if(hand.at(i) != nullptr)
     {
@@ -106,6 +107,15 @@ std::string UiCmdLine::HandToString(std::vector<Card*> hand)
       aa << (hand.at(i)->GetCardAttack());
       dd << (hand.at(i)->GetCardDefence());
       hand_str += bb.str() + ")" + aa.str() + "/" + dd.str();
+      if (hand.at(i)->IsReady())
+      {
+        active << "*";
+      }
+      else
+      {
+        active << "";
+      }
+      hand_str += active.str();
       if (i < hand.size()-1)
       {
         hand_str += ", ";

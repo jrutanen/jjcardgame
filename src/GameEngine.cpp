@@ -37,6 +37,7 @@ void GameEngine::GameLoop()
   player_in_turn = 0;
   //set-up first turn
   players.at(player_in_turn)->SetUpTurn();
+  game_board.SetupTurn(player_in_turn);
   while(!die)
   {
     response = ui.DrawBoard(p_player1, p_player2, &game_board, player_in_turn);
@@ -79,8 +80,6 @@ void GameEngine::InitGame()
 
 void GameEngine::StartTurn()
 {
-//  for (uint i = 0; i < players.size(); ++i)
-//  {
     if (player_in_turn == 0)
     {
       p_player1->SetUpTurn();
@@ -89,7 +88,6 @@ void GameEngine::StartTurn()
     {
       p_player2->SetUpTurn();
     }
- // }
 }
 
 void GameEngine::EndTurn()
@@ -208,19 +206,23 @@ void GameEngine::UiEvent(std::vector<char> event)
       {
         int att_card_nbr = (int)event.at(1)-'0'; //input character number at position 1, own side of board
         int def_card_nbr = (int)event.at(2)-'0'; //input character number at position 2, opponent side of board
-        if (att_card_nbr < game_board.NumberOfCardsOnBoard(player_in_turn))  //Only cards on board can attack, first parameter A X _ , needs to be valid
+        //Only cards on board can attack, first parameter A X _ , needs to be valid
+        //Only cards that are active (ready) can attack
+        if (att_card_nbr < game_board.NumberOfCardsOnBoard(player_in_turn)
+            && game_board.GetCardsForPlayer(player_in_turn).at(att_card_nbr)->IsReady())
         {
-
-      if (event.at(2) == 'O')
-      {
-      AttackPlayer(att_card_nbr, DefendingPlayer());
-      }
-      else
-      {
-      AttackCard(att_card_nbr, def_card_nbr);
-      }
+          if (event.at(2) == 'O')
+          {
+            AttackPlayer(att_card_nbr, DefendingPlayer());
+          }
+          else
+          {
+            AttackCard(att_card_nbr, def_card_nbr);
+          }
+          //Player has attacked with the card and it is deactivated for the reminder of this turn
+          game_board.GetCardsForPlayer(player_in_turn).at(att_card_nbr)->DeActivate();
         }
-      break;
+        break;
       }
 
       case 'R' :
@@ -229,6 +231,7 @@ void GameEngine::UiEvent(std::vector<char> event)
         EndTurn();
         ++turn;
         players.at(player_in_turn)->SetUpTurn();
+        game_board.SetupTurn(player_in_turn);
         break;
       }
       case 'Q' :

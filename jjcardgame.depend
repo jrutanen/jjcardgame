@@ -3,7 +3,7 @@
 	<random>
 	"GameEngine.h"
 
-1448224070 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\gameengine.h
+1448225582 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\gameengine.h
 	"JJCardGame.h"
 	"Player.h"
 	"CardDeck.h"
@@ -12,7 +12,7 @@
 	<iostream>
 	<vector>
 
-1447102304 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\player.h
+1448226012 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\player.h
 	<string>
 	<vector>
 	"CardDeck.h"
@@ -50,10 +50,10 @@
 1445121390 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\hero.cpp
 	"Hero.h"
 
-1448140577 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\player.cpp
+1448225999 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\player.cpp
 	"Player.h"
 
-1447102304 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\card.cpp
+1448225419 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\card.cpp
 	"Card.h"
 
 1448197714 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\carddeck.cpp
@@ -65,7 +65,7 @@
 1445288354 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\datamanager.h
 	"JJCardGame.h"
 
-1448203250 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\gameengine.cpp
+1448227585 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\gameengine.cpp
 	"GameEngine.h"
 
 1445193693 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\monstercard.cpp
@@ -76,12 +76,12 @@
 	"JJCardGame.h"
 	<string>
 
-1448204420 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\board.h
+1448226306 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\board.h
 	"JJCardGame.h"
 	<vector>
 	"Card.h"
 
-1448198081 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\board.cpp
+1448226372 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\board.cpp
 	"Board.h"
 
 1445288315 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\jjcardgame.h

@@ -61,4 +61,15 @@ void Board::AddCardtoGraveYard(int player, Card* p_card)
   graveyards.at(player).push_back(p_card);
 }
 
+void Board::ActivateCardsOnBoard(int player_nbr)
+{
+  for (int i = 0; i < NumberOfCardsOnBoard(player_nbr); ++i)
+  {
+    cards_on_board.at(player_nbr).at(i)->Activate();
+  }
+}
 
+void Board::SetupTurn(int player_nbr)
+{
+  ActivateCardsOnBoard(player_nbr);
+}

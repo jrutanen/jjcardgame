@@ -16,6 +16,7 @@ class Board
     int NumberOfCardsOnBoard(int player_nbr);
     void RemoveCardFromBoard(int player, int index);
     std::vector<Card*> ShowGraveyard(int player);
+    void SetupTurn(int player_nbr);
   protected:
   private:
       Card* cards_on_board_player[2][5];
@@ -27,6 +28,7 @@ class Board
       std::vector<std::vector<Card*>> cards_on_board;
       std::vector<std::vector<Card*>> graveyards;
       void AddCardtoGraveYard(int player, Card* p_card);
+      void ActivateCardsOnBoard(int player_nbr);
 
 };
 
