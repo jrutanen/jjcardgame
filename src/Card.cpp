@@ -90,12 +90,12 @@ bool Card::IsReady()
   return playable;
 }
 
-bool Card::Activate()
+void Card::Activate()
 {
   playable = true;
 }
 
-bool Card::DeActivate()
+void Card::DeActivate()
 {
   playable = false;
 }
