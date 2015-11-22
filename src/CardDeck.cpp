@@ -34,8 +34,8 @@ for (int i = 0; i < 20; ++i)
   p_card_five= new Card();
   p_card_five->SetCardName("Kaurapuuro");
   p_card_five->SetCastingCost(1);
-  p_card_four->SetCardAttack(1);
-  p_card_four->SetCardDefence(9);
+  p_card_five->SetCardAttack(1);
+  p_card_five->SetCardDefence(9);
   AddCard(p_card_five);
 /*  p_card_six.SetCardName("Mummy");
   p_card_six.SetCastingCost(1);
