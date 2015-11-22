@@ -11,7 +11,8 @@ Board::Board()
   }
   cards_on_board.push_back(initial_vector);
   cards_on_board.push_back(initial_vector);
-
+  graveyards.push_back(initial_vector);
+  graveyards.push_back(initial_vector);
 }
 
 Board::~Board()
@@ -46,6 +47,12 @@ int Board::NumberOfCardsOnBoard(int player_nbr)
 
 void Board::RemoveCardFromBoard(int player, int index)
 {
+  AddCardtoGraveYard(player, cards_on_board.at(player).at(index));
   cards_on_board.at(player).erase(cards_on_board.at(player).begin() + index);
+}
+
+void Board::AddCardtoGraveYard(int player, Card* p_card)
+{
+  graveyards.at(player).push_back(p_card);
 }
 

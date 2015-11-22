@@ -24,6 +24,9 @@ class Board
       std::vector<Card*> cards_in_graveyard_own;
       std::vector<Card*> cards_in_graveyard_opp;
       std::vector<std::vector<Card*>> cards_on_board;
+      std::vector<std::vector<Card*>> graveyards;
+      void AddCardtoGraveYard(int player, Card* p_card);
+
 };
 
 #endif // BOARD_H

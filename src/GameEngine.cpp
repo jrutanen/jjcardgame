@@ -137,74 +137,61 @@ void GameEngine::UiEvent(std::vector<char> event)
       case 'A' : //commands to be used:; void Player::ReduceHitPoint(int points); int Player::GetHitPoints(); void Card::ReduceDefence(int defence); int Card::GetCardAttack()
         //int Card::GetCardDefence(); Card::SetCardDefence(int setdefence)
       {
-        int card_nbr1 = (int)event.at(1)-'0'; //input character number at position 1, own side of board
-        int card_nbr2 = (int)event.at(2)-'0'; //input character number at position 2, opponent side of board
-        if (card_nbr1 < game_board.NumberOfCardsOnBoard(player_in_turn))  //Only cards on board can attack, first parameter A X _ , needs to be valid
+        int att_card_nbr = (int)event.at(1)-'0'; //input character number at position 1, own side of board
+        int def_card_nbr = (int)event.at(2)-'0'; //input character number at position 2, opponent side of board
+        if (att_card_nbr < game_board.NumberOfCardsOnBoard(player_in_turn))  //Only cards on board can attack, first parameter A X _ , needs to be valid
         {
-         // std::cout << "GetCardsOnBoard 1 toimii!!!"; // std::cout << "Invalid input";
+          if (def_card_nbr < game_board.NumberOfCardsOnBoard( DefendingPlayer() ))  //Only valid targets are opponent player and defending creatures, second parameter A _ X needs to be valid
+          {
+            int att_card_attack = 0;
+            int att_card_defence = 0;
+            int def_card_attack = 0;
+            int def_card_defence = 0;
+            int att_new_defence = 0;
+            int def_new_defence = 0;
 
-   //     ChangePlayerInTurn();  //Change to opposing board
-        if (card_nbr2 < game_board.NumberOfCardsOnBoard( DefendingPlayer() ))  //Only valid targets are opponent player and defending creatures, second parameter A _ X needs to be valid
-        {
-//         ChangePlayerInTurn();
-         //std::cout << "GetCardsOnBoard 2 toimii!!!";
-         int attcardattack = 0;
-         int attcarddefence = 0;
-         int defcardattack = 0;
-         int defcarddefence = 0;
-         int attnewdefence = 0;
-         int defnewdefence = 0;
+             //Get current attack and defence values for the cards
+            //Attacking card
+            att_card_defence = game_board.GetCardsForPlayer( player_in_turn ).at(att_card_nbr)->GetCardDefence();
+            att_card_attack = game_board.GetCardsForPlayer(player_in_turn).at(att_card_nbr)->GetCardAttack();
+            //Defending card
+            def_card_defence = game_board.GetCardsForPlayer( DefendingPlayer() ).at(def_card_nbr)->GetCardDefence();
+            def_card_attack = game_board.GetCardsForPlayer(DefendingPlayer()).at(def_card_nbr)->GetCardAttack();
+            //calculate new defence values for both cards
+            att_new_defence = att_card_defence - def_card_attack;
+            def_new_defence = def_card_defence - att_card_attack;
 
-         attcardattack = game_board.GetCardsForPlayer(player_in_turn).at(card_nbr1)->GetCardAttack();
-         defcardattack = game_board.GetCardsForPlayer(DefendingPlayer()).at(card_nbr2)->GetCardAttack();
- //        ChangePlayerInTurn
+            if (att_new_defence <= 0)
+            {
+              //Attacking Creature dies, erase the element from the vector and add it to the graveyard
+              game_board.RemoveCardFromBoard(player_in_turn, att_card_nbr);
+            }
+            else  //Reduce hit points
+            {
+             //Attacking Creatures defences are reduced
+              game_board.GetCardsForPlayer(player_in_turn).at(att_card_nbr)->ReduceDefence(def_card_attack);
+             // SetCardDefence
+            }
 
-         //Attacking card
-         attcarddefence = game_board.GetCardsForPlayer( player_in_turn ).at(card_nbr1)->GetCardDefence();
-         defcarddefence = game_board.GetCardsForPlayer( DefendingPlayer() ).at(card_nbr2)->GetCardDefence();
-         attnewdefence = attcarddefence - defcardattack;
+            if (def_new_defence <= 0)
+            {
+              //defending Creature dies, erase the element from the vector
+              game_board.RemoveCardFromBoard(DefendingPlayer(), def_card_nbr);
+            }
+            else  //Reduce hit points
+            {
+              game_board.GetCardsForPlayer(DefendingPlayer()).at(def_card_nbr)->ReduceDefence(att_card_attack);
+              // SetCardDefence
+              //Creatures defences are reduced
+            }
 
-         //Defending card
-         //attcarddefence = game_board.GetCardsForPlayer( player_in_turn ).at(card_nbr1)->GetCardDefence();
-         //defcarddefence = game_board.GetCardsForPlayer( DefendingPlayer() ).at(card_nbr2)->GetCardDefence();
-         defnewdefence = defcarddefence - attcardattack;
-
-
-         if (attnewdefence <= 0)
-         {
-           //Attacking Creature dies, erase the element from the vector
-         game_board.RemoveCardFromBoard(player_in_turn, card_nbr1);
-         }
-         else  //Reduce hit points
-         {
-         game_board.GetCardsForPlayer(DefendingPlayer()).at(card_nbr2)->ReduceDefence(attcardattack);
-            // SetCardDefence
-            //Creatures defences are reduced
-         }
-
-          if (defnewdefence <= 0)
-         {
-           //defending Creature dies, erase the element from the vector
-         game_board.RemoveCardFromBoard(DefendingPlayer(), card_nbr2);
-         }
-         else  //Reduce hit points
-         {
-         game_board.GetCardsForPlayer(player_in_turn).at(card_nbr1)->ReduceDefence(defcardattack);
-            // SetCardDefence
-            //Creatures defences are reduced
-         }
-
-        //  std::cout << "newdefence toimii!!!" << newdefence << std::endl;
-         // std::cout << "GetCardAttack toimii!!!" << cardattack;
-         //Attack cards attack - Defending cards Defence = NewDefence for both cards. If defence =< 0, then card is removed from the game
-         //cards_on_board.at(player)[slot]
-         //GetCardAttack();
-
-
+            //  std::cout << "newdefence toimii!!!" << newdefence << std::endl;
+            // std::cout << "GetCardAttack toimii!!!" << cardattack;
+            //Attack cards attack - Defending cards Defence = NewDefence for both cards. If defence =< 0, then card is removed from the game
+            //cards_on_board.at(player)[slot]
+            //GetCardAttack();
+          }
         }
-        }
-        std::cout << "\nA-pressed";
-
         break;
       }
       case 'R' :
