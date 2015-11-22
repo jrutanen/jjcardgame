@@ -86,7 +86,7 @@
 
 1445288315 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\jjcardgame.h
 
-1446574894 source:c:\newcardgame\jjcardgame\src\card.cpp
+1448195161 source:c:\newcardgame\jjcardgame\src\card.cpp
 	"Card.h"
 
 1446574874 c:\newcardgame\jjcardgame\include\card.h
@@ -161,7 +161,7 @@
 1448192623 source:c:\newcardgame\jjcardgame\src\board.cpp
 	"Board.h"
 
-1448140139 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
+1448195432 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
 	"GameEngine.h"
 
 1445202090 source:c:\newcardgame\jjcardgame\src\hand.cpp

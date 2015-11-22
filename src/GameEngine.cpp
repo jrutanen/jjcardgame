@@ -154,6 +154,7 @@ void GameEngine::UiEvent(std::vector<char> event)
          int defcarddefence = 0;
          int attnewdefence = 0;
          int defnewdefence = 0;
+
          attcardattack = game_board.GetCardsForPlayer(player_in_turn).at(card_nbr1)->GetCardAttack();
          defcardattack = game_board.GetCardsForPlayer(DefendingPlayer()).at(card_nbr2)->GetCardAttack();
  //        ChangePlayerInTurn
@@ -164,8 +165,8 @@ void GameEngine::UiEvent(std::vector<char> event)
          attnewdefence = attcarddefence - defcardattack;
 
          //Defending card
-         attcarddefence = game_board.GetCardsForPlayer( player_in_turn ).at(card_nbr1)->GetCardDefence();
-         defcarddefence = game_board.GetCardsForPlayer( DefendingPlayer() ).at(card_nbr2)->GetCardDefence();
+         //attcarddefence = game_board.GetCardsForPlayer( player_in_turn ).at(card_nbr1)->GetCardDefence();
+         //defcarddefence = game_board.GetCardsForPlayer( DefendingPlayer() ).at(card_nbr2)->GetCardDefence();
          defnewdefence = defcarddefence - attcardattack;
 
 
