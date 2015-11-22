@@ -14,6 +14,7 @@ class Board
     void AddCardToPlayer(int player, Card* p_card);
     std::vector<Card*> GetCardsForPlayer(int player);
     int NumberOfCardsOnBoard(int player_nbr);
+    void RemoveCardFromBoard(int player, int index);
   protected:
   private:
       Card* cards_on_board_player[2][5];
