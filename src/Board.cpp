@@ -60,3 +60,5 @@ void Board::AddCardtoGraveYard(int player, Card* p_card)
 {
   graveyards.at(player).push_back(p_card);
 }
+
+
