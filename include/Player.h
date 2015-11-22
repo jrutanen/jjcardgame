@@ -17,7 +17,7 @@ class Player
         virtual ~Player();
         void AddHitPoints(int points);
         int GetHitPoints ();
-        void ReduceHitPoint(int points);
+        void ReduceHitPoints(int points);
         void DrawCard();
         std::vector<Card*> ShowHand();
         void SetName(std::string name);

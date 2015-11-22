@@ -25,7 +25,7 @@ class GameEngine
         void InitGame();
         void ChangePlayerInTurn();
         void AttackCard(int att_card_nbr, int def_card_nbr);
-        void AttackPlayer(int player_nbr);
+        void AttackPlayer(int att_card_nbr, int player_nbr);
         int DefendingPlayer();
         void InitPlayer(Player* player);
         Board game_board;
