@@ -44,3 +44,8 @@ int Board::NumberOfCardsOnBoard(int player_nbr)
   return cards_on_board.at(player_nbr).size();
 }
 
+void Board::RemoveCardFromBoard(int player, int index)
+{
+  cards_on_board.at(player).erase(cards_on_board.at(player).begin() + index);
+}
+

@@ -119,7 +119,7 @@
 	<random>
 	"GameEngine.h"
 
-1448127917 c:\newcardgame\jjcardgame\include\gameengine.h
+1448141676 c:\newcardgame\jjcardgame\include\gameengine.h
 	"JJCardGame.h"
 	"Player.h"
 	"CardDeck.h"
@@ -153,12 +153,12 @@
 	"Card.h"
 	"JJCardGame.h"
 
-1448139126 c:\newcardgame\jjcardgame\include\board.h
+1448190759 c:\newcardgame\jjcardgame\include\board.h
 	"JJCardGame.h"
 	<vector>
 	"Card.h"
 
-1448139126 source:c:\newcardgame\jjcardgame\src\board.cpp
+1448192623 source:c:\newcardgame\jjcardgame\src\board.cpp
 	"Board.h"
 
 1448140139 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
