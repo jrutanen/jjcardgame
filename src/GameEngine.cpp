@@ -101,47 +101,21 @@ void GameEngine::InitPlayer(Player* player)
   player->SetUpGame();
 }
 
-void GameEngine::UiEvent(std::vector<char> event)
+void GameEngine::AttackPlayer(int player_nbr)
 {
-//  std::cout << "P x-Play Card x, A x-Attack Card x, R-End turn, Q-Quit\n";
-  if (event.size() > 0)
-  {
-    switch(event.at(0))
-    {
-      case '?' :
-      {
-        ui.DisplayHelp();
-        break;
-      }
-      case 'P' :
-      {
-        //std::ostringstream card << event.at(1) ;
 
-        int card_nbr = (int)event.at(1)-'0';  //In Ascii table character reduction, 0 is 48. card_nbr is input character number
-        if (card_nbr < players.at(player_in_turn)->GetCardsInHand()) //Only execute the code if cards in hand is higher than input character number, otherwise break
-        {
+     //int att_card_attack = 0;
+    // att_card_attack = game_board.GetCardsForPlayer(player_in_turn).at(att_card_nbr)->GetCardAttack();
 
-        if (players.at(player_in_turn)->CardInHand(card_nbr)->GetCastingCost() > players.at(player_in_turn)->GetAvailableMana()) //If the card that has been given as input casting cost is higher than available mana, then execute code
-        {
-           //not enough mana
-        }
-        else  //Yes enough mana
-        {
-          Card* p_card = players.at(player_in_turn)->PlayCard(card_nbr); //p_player1->PlayCard(0); Plays the card pointer
-          game_board.AddCardToPlayer(player_in_turn, p_card); //Adds the card to a his side on board
-          players.at(player_in_turn)->ReduceAvailableMana(p_card->GetCastingCost());  //Reduces the played cards Casting Cost
-        }
-        }
-        break;
-      }
-      case 'A' : //commands to be used:; void Player::ReduceHitPoint(int points); int Player::GetHitPoints(); void Card::ReduceDefence(int defence); int Card::GetCardAttack()
-        //int Card::GetCardDefence(); Card::SetCardDefence(int setdefence)
-      {
-        int att_card_nbr = (int)event.at(1)-'0'; //input character number at position 1, own side of board
-        int def_card_nbr = (int)event.at(2)-'0'; //input character number at position 2, opponent side of board
-        if (att_card_nbr < game_board.NumberOfCardsOnBoard(player_in_turn))  //Only cards on board can attack, first parameter A X _ , needs to be valid
-        {
-          if (def_card_nbr < game_board.NumberOfCardsOnBoard( DefendingPlayer() ))  //Only valid targets are opponent player and defending creatures, second parameter A _ X needs to be valid
+      //players.at(DefendingPlayer())-> ReduceHitPoints(att_card_attack);
+              //player.players.at().GetHitPoints();
+              //ReduceHitPoints(att_card_attack);
+
+}
+
+void GameEngine::AttackCard(int att_card_nbr, int def_card_nbr)
+{
+    if (def_card_nbr < game_board.NumberOfCardsOnBoard( DefendingPlayer() ))  //Only valid targets are opponent player and defending creatures, second parameter A _ X needs to be valid
           {
             int att_card_attack = 0;
             int att_card_defence = 0;
@@ -150,7 +124,7 @@ void GameEngine::UiEvent(std::vector<char> event)
             int att_new_defence = 0;
             int def_new_defence = 0;
 
-             //Get current attack and defence values for the cards
+            //Get current attack and defence values for the cards
             //Attacking card
             att_card_defence = game_board.GetCardsForPlayer( player_in_turn ).at(att_card_nbr)->GetCardDefence();
             att_card_attack = game_board.GetCardsForPlayer(player_in_turn).at(att_card_nbr)->GetCardAttack();
@@ -191,9 +165,62 @@ void GameEngine::UiEvent(std::vector<char> event)
             //cards_on_board.at(player)[slot]
             //GetCardAttack();
           }
+}
+void GameEngine::UiEvent(std::vector<char> event)
+{
+//  std::cout << "P x-Play Card x, A x-Attack Card x, R-End turn, Q-Quit\n";
+  if (event.size() > 0)
+  {
+    switch(event.at(0))
+    {
+      case '?' :
+      {
+        ui.DisplayHelp();
+        break;
+      }
+
+      case 'P' :
+      {
+        //std::ostringstream card << event.at(1) ;
+
+        int card_nbr = (int)event.at(1)-'0';  //In Ascii table character reduction, 0 is 48. card_nbr is input character number
+        if (card_nbr < players.at(player_in_turn)->GetCardsInHand()) //Only execute the code if cards in hand is higher than input character number, otherwise break
+        {
+
+        if (players.at(player_in_turn)->CardInHand(card_nbr)->GetCastingCost() > players.at(player_in_turn)->GetAvailableMana()) //If the card that has been given as input casting cost is higher than available mana, then execute code
+        {
+           //not enough mana
+        }
+        else  //Yes enough mana
+        {
+          Card* p_card = players.at(player_in_turn)->PlayCard(card_nbr); //p_player1->PlayCard(0); Plays the card pointer
+          game_board.AddCardToPlayer(player_in_turn, p_card); //Adds the card to a his side on board
+          players.at(player_in_turn)->ReduceAvailableMana(p_card->GetCastingCost());  //Reduces the played cards Casting Cost
+        }
         }
         break;
       }
+
+      case 'A' : //commands to be used:; void Player::ReduceHitPoint(int points); int Player::GetHitPoints(); void Card::ReduceDefence(int defence); int Card::GetCardAttack()
+        //int Card::GetCardDefence(); Card::SetCardDefence(int setdefence)
+      {
+        int att_card_nbr = (int)event.at(1)-'0'; //input character number at position 1, own side of board
+        int def_card_nbr = (int)event.at(2)-'0'; //input character number at position 2, opponent side of board
+        if (att_card_nbr < game_board.NumberOfCardsOnBoard(player_in_turn))  //Only cards on board can attack, first parameter A X _ , needs to be valid
+        {
+
+      if (event.at(2) == 'O')
+      {
+      AttackPlayer(DefendingPlayer());
+      }
+      else
+      {
+      AttackCard(att_card_nbr, def_card_nbr);
+      }
+        }
+      break;
+      }
+
       case 'R' :
       {
         ChangePlayerInTurn();
