@@ -4,34 +4,38 @@ CardDeck::CardDeck()
 {
   //ctor
   //Initialize card vector with five cards for test purposes
+for (int i = 0; i < 20; ++i)
+  {
   p_card_one = new Card();
   p_card_one->SetCardName("Mummy");
   p_card_one->SetCastingCost(1);
   p_card_one->SetCardType("Basic");
   p_card_one->SetCardAttack(1);
-  p_card_one->SetCardDefence(2);
+  p_card_one->SetCardDefence(3);
   AddCard(p_card_one);
   p_card_two = new Card();
   p_card_two->SetCardName("Vampire");
-  p_card_two->SetCastingCost(2);
+  p_card_two->SetCastingCost(1);
   p_card_two->SetCardAttack(2);
-  p_card_two->SetCardDefence(2);
+  p_card_two->SetCardDefence(3);
   AddCard(p_card_two);
   p_card_three = new Card();
   p_card_three->SetCardName("Werewolf");
   p_card_three->SetCastingCost(1);
   p_card_three->SetCardAttack(3);
-  p_card_three->SetCardDefence(1);
+  p_card_three->SetCardDefence(5);
   AddCard(p_card_three);
   p_card_four = new Card();
   p_card_four->SetCardName("Cthulhu");
-  p_card_four->SetCastingCost(9);
+  p_card_four->SetCastingCost(1);
   p_card_four->SetCardAttack(8);
   p_card_four->SetCardDefence(9);
   AddCard(p_card_four);
   p_card_five= new Card();
-  p_card_five->SetCardName("Mummy");
+  p_card_five->SetCardName("Kaurapuuro");
   p_card_five->SetCastingCost(1);
+  p_card_four->SetCardAttack(1);
+  p_card_four->SetCardDefence(9);
   AddCard(p_card_five);
 /*  p_card_six.SetCardName("Mummy");
   p_card_six.SetCastingCost(1);
@@ -56,7 +60,7 @@ CardDeck::CardDeck()
   AddCard(p_card_twelve);
 */
 }
-
+}
 CardDeck::~CardDeck()
 {
   //dtor
