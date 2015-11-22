@@ -4,6 +4,7 @@ Card::Card()
 {
  card_class = "basic";
  card_text = "default text";//ctor
+ DeActivate();
 }
 
 Card::~Card()
@@ -82,5 +83,20 @@ void Card::AddDefence(int defence)
 void Card::ReduceDefence(int defence)
 {
   card_defence = card_defence - defence;
+}
+
+bool Card::IsReady()
+{
+  return playable;
+}
+
+bool Card::Activate()
+{
+  playable = true;
+}
+
+bool Card::DeActivate()
+{
+  playable = false;
 }
 //End copy paste

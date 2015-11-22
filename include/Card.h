@@ -26,6 +26,9 @@ class Card
         void SetCardDefence(int setdefence);
         int GetCardAttack();
         int GetCardDefence();
+        bool IsReady();
+        void Activate();
+        void DeActivate();
         //end copy paste
     protected:
         int casting_cost;
@@ -36,6 +39,7 @@ class Card
         int card_attack;
         int card_defence;
         std::string card_ability;
+        bool playable;
          //end copy paste
     private:
 };
