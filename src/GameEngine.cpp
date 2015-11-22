@@ -42,6 +42,7 @@ void GameEngine::GameLoop()
     response = ui.DrawBoard(p_player1, p_player2, &game_board, player_in_turn);
     UiEvent(response);
   }
+  std::cout << "Game ends, you win!" << std::endl;
 }
 
 void GameEngine::ChangePlayerInTurn()
@@ -101,16 +102,17 @@ void GameEngine::InitPlayer(Player* player)
   player->SetUpGame();
 }
 
-void GameEngine::AttackPlayer(int player_nbr)
+void GameEngine::AttackPlayer(int att_card_nbr, int player_nbr)
 {
-
-     //int att_card_attack = 0;
-    // att_card_attack = game_board.GetCardsForPlayer(player_in_turn).at(att_card_nbr)->GetCardAttack();
-
-      //players.at(DefendingPlayer())-> ReduceHitPoints(att_card_attack);
-              //player.players.at().GetHitPoints();
-              //ReduceHitPoints(att_card_attack);
-
+     int att_card_attack = 0;
+     att_card_attack = game_board.GetCardsForPlayer(player_in_turn).at(att_card_nbr)->GetCardAttack(); //Get attacking cards attack
+     players.at(player_nbr)->ReduceHitPoints(att_card_attack); //Reduce the attacking cards attack amount from the defending player
+     if (players.at(player_nbr)->GetHitPoints() <= 0)
+       {
+        die = true;
+       }
+     //players.at().GetHitPoints();
+     //ReduceHitPoints(att_card_attack);
 }
 
 void GameEngine::AttackCard(int att_card_nbr, int def_card_nbr)
@@ -201,7 +203,7 @@ void GameEngine::UiEvent(std::vector<char> event)
         break;
       }
 
-      case 'A' : //commands to be used:; void Player::ReduceHitPoint(int points); int Player::GetHitPoints(); void Card::ReduceDefence(int defence); int Card::GetCardAttack()
+      case 'A' :
         //int Card::GetCardDefence(); Card::SetCardDefence(int setdefence)
       {
         int att_card_nbr = (int)event.at(1)-'0'; //input character number at position 1, own side of board
@@ -211,7 +213,7 @@ void GameEngine::UiEvent(std::vector<char> event)
 
       if (event.at(2) == 'O')
       {
-      AttackPlayer(DefendingPlayer());
+      AttackPlayer(att_card_nbr, DefendingPlayer());
       }
       else
       {

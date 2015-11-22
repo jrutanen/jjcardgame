@@ -27,7 +27,7 @@ int Player::GetHitPoints()
   return hit_points;
 }
 
-void Player::ReduceHitPoint(int points)
+void Player::ReduceHitPoints(int points)
 {
   hit_points = hit_points - points;
 }
