@@ -23,5 +23,6 @@ class UiCmdLine
   private:
     void Clear();
     std::string HandToString(std::vector<Card*> hand);
+    std::string GraveyardToString(std::vector<Card*> graveyard);
 };
 #endif // UICMDLINE_H

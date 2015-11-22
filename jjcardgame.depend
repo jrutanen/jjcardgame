@@ -76,7 +76,7 @@
 	"JJCardGame.h"
 	<string>
 
-1448197933 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\board.h
+1448204420 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\board.h
 	"JJCardGame.h"
 	<vector>
 	"Card.h"
@@ -173,7 +173,7 @@
 1448127671 source:c:\newcardgame\jjcardgame\src\player.cpp
 	"Player.h"
 
-1445883221 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\uicmdline.h
+1448204254 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\uicmdline.h
 	<iostream>
 	<string>
 	<vector>

@@ -33,7 +33,7 @@ std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board, int
     std::cout << "  " << p1->GetName() << "\tHP: " << p1->GetHitPoints() << "\tMana: "
               << p1->GetAvailableMana() << "(" << p1->GetMana() << ")\n";
   }
-  std::cout << "  Graveyard:\n";
+  std::cout << "  Graveyard: " << GraveyardToString(board->ShowGraveyard(0)) << "\n";
   std::cout << "  Hand: " << HandToString(p1->ShowHand()) << "\n";
   std::cout << "\n";
   std::cout << " Board: " << HandToString(board->GetCardsForPlayer(0)) << "\n";
@@ -42,7 +42,7 @@ std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board, int
   std::cout << " Board: " << HandToString(board->GetCardsForPlayer(1)) << "\n";
   std::cout << "\n";
   std::cout << "  Hand: " << HandToString(p2->ShowHand()) << "\n";
-  std::cout << "  Graveyard:\n";
+  std::cout << "  Graveyard: " << GraveyardToString(board->ShowGraveyard(1)) << "\n";
   if (active_player == 1)
   {
     std::cout << " *" << p2->GetName() << "\tHP: " << p2->GetHitPoints() << "\tMana: "
@@ -115,3 +115,25 @@ std::string UiCmdLine::HandToString(std::vector<Card*> hand)
   return hand_str;
 }
 
+std::string UiCmdLine::GraveyardToString(std::vector<Card*> graveyard)
+{
+  std::string graveyard_str = "";
+
+  for (uint i = 0; i < graveyard.size(); ++i)
+  {
+    std::ostringstream ss;
+    std::ostringstream bb;
+    std::ostringstream aa;
+    std::ostringstream dd;
+    ss << (i);
+    if(graveyard.at(i) != nullptr)
+    {
+      graveyard_str += ss.str() + ":" + graveyard.at(i)->GetCardName();
+      if (i < graveyard.size()-1)
+      {
+        graveyard_str += ", ";
+      }
+    }
+  }
+  return graveyard_str;
+}

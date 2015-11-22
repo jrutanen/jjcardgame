@@ -51,8 +51,12 @@ void Board::RemoveCardFromBoard(int player, int index)
   cards_on_board.at(player).erase(cards_on_board.at(player).begin() + index);
 }
 
+std::vector<Card*> Board::ShowGraveyard(int player)
+{
+  return graveyards.at(player);
+}
+
 void Board::AddCardtoGraveYard(int player, Card* p_card)
 {
   graveyards.at(player).push_back(p_card);
 }
-
