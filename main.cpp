@@ -16,7 +16,7 @@ int main()
 
     //Start game with SettingUserInterface
     SettingsUserInterface start_ui;
-    start_ui.Start_user_interface();
+    start_ui.StartUserInterface();
 
     return 0;
 }

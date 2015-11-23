@@ -115,7 +115,7 @@
 	"JJCardGame.h"
 	<string>
 
-1448311183 source:c:\newcardgame\jjcardgame\main.cpp
+1448315871 source:c:\newcardgame\jjcardgame\main.cpp
 	<random>
 	"GameEngine.h"
 	"SettingsUserInterface.h"
@@ -200,8 +200,12 @@
 1448297843 source:c:\newcardgame\jjcardgame\src\uicmdline.cpp
 	"UiCmdLine.h"
 
-1448312159 c:\newcardgame\jjcardgame\include\settingsuserinterface.h
+1448317733 c:\newcardgame\jjcardgame\include\settingsuserinterface.h
 	"JJCardGame.h"
+	"GameEngine.h"
 	<iostream>
 	<vector>
+
+1448317733 source:c:\newcardgame\jjcardgame\src\settingsuserinterface.cpp
+	"SettingsUserInterface.h"
 
