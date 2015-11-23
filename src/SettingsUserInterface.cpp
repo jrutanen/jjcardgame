@@ -1,10 +1,29 @@
 #include "SettingsUserInterface.h"
 
-
-void SettingsUserInterface::Start_user_interface()
+SettingsUserInterface::SettingsUserInterface()
 {
+  die = false;//ctor
+}
 
+SettingsUserInterface::~SettingsUserInterface()
+{
+  //dtor
+}
 
+void SettingsUserInterface::Clear()
+{
+  //Never use system, unsafe and resource hungry!!!!
+  std::system("CLS");
+}
+
+void SettingsUserInterface::StartUserInterface()
+{
+  while(!die)
+  {
+    Clear();
+    std::vector<char> response;
+    std::string input;
+    std::cout << "|==============================================|\n";
     std::cout << "S-Start Game, Q-Quit\n";
     std::cout << "  Give your command: ";
     while (getline(std::cin, input) && input.empty())
@@ -20,7 +39,8 @@ void SettingsUserInterface::Start_user_interface()
       response.push_back(c);
       }
     }
-  return response;
+ StartMenuEvent(response);
+  }
 }
 
 void SettingsUserInterface::StartMenuEvent(std::vector<char> event)
@@ -32,7 +52,7 @@ void SettingsUserInterface::StartMenuEvent(std::vector<char> event)
       {
         case '?' :
         {
-        ui.DisplayHelp();
+        //ui.DisplayHelp();
         break;
         }
 
@@ -57,7 +77,7 @@ void SettingsUserInterface::Start_game()
     game.Run();
 }
 
-void SettingsUserInterface:Create_deck()
+void SettingsUserInterface::Create_deck()
 {
 
 }
