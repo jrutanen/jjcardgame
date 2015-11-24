@@ -120,7 +120,7 @@
 	"GameEngine.h"
 	"SettingsUserInterface.h"
 
-1448223213 c:\newcardgame\jjcardgame\include\gameengine.h
+1448399502 c:\newcardgame\jjcardgame\include\gameengine.h
 	"JJCardGame.h"
 	"Player.h"
 	"CardDeck.h"
@@ -162,7 +162,7 @@
 1448297843 source:c:\newcardgame\jjcardgame\src\board.cpp
 	"Board.h"
 
-1448297843 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
+1448399536 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
 	"GameEngine.h"
 
 1445202090 source:c:\newcardgame\jjcardgame\src\hand.cpp
@@ -200,12 +200,15 @@
 1448297843 source:c:\newcardgame\jjcardgame\src\uicmdline.cpp
 	"UiCmdLine.h"
 
-1448317733 c:\newcardgame\jjcardgame\include\settingsuserinterface.h
+1448390909 c:\newcardgame\jjcardgame\include\settingsuserinterface.h
 	"JJCardGame.h"
 	"GameEngine.h"
+	"Player.h"
 	<iostream>
 	<vector>
+	<string>
+	<sstream>
 
-1448317733 source:c:\newcardgame\jjcardgame\src\settingsuserinterface.cpp
+1448399681 source:c:\newcardgame\jjcardgame\src\settingsuserinterface.cpp
 	"SettingsUserInterface.h"
 

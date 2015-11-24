@@ -2,8 +2,11 @@
 #define SETTINGSUSERINTERFACE_H
 #include "JJCardGame.h"
 #include "GameEngine.h"
+#include "Player.h"
 #include <iostream>
 #include <vector>
+#include <string>
+#include <sstream>
 
 class SettingsUserInterface
 {
@@ -17,5 +20,8 @@ class SettingsUserInterface
         void Create_deck();
         bool die = false;
         void Clear();
+        Player* p_player1;
+        Player* p_player2;
+        std::vector<Player*> players;
 };
 #endif // SETTINGSUSERINTERFACE_H_INCLUDED

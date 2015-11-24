@@ -12,6 +12,15 @@ GameEngine::GameEngine()
     players.push_back(p_player2);
 }
 
+GameEngine::GameEngine(Player* p_p1, Player* p_p2)
+{
+    //ctor
+    p_player1 = p_p1;
+    p_player2 = p_p2;
+    players.push_back(p_player1);
+    players.push_back(p_player2);
+}
+
 GameEngine::~GameEngine()
 {
     //dtor
