@@ -3,11 +3,20 @@
 SettingsUserInterface::SettingsUserInterface()
 {
   die = false;//ctor
+  p_player1 = new Player();
+  p_player2 = new Player();
+  p_player1->SetName("Jani");
+  p_player2->SetName("Janne");
+  //add to the players vector
+  players.push_back(p_player1);
+  players.push_back(p_player2);
 }
 
 SettingsUserInterface::~SettingsUserInterface()
 {
   //dtor
+  delete p_player1;
+  delete p_player2;
 }
 
 void SettingsUserInterface::Clear()
@@ -24,7 +33,9 @@ void SettingsUserInterface::StartUserInterface()
     std::vector<char> response;
     std::string input;
     std::cout << "|==============================================|\n";
-    std::cout << "S-Start Game, Q-Quit\n";
+    std::cout << "S-Start Game\n";
+    std::cout << "Q-Quit\n";
+    std::cout << "C-Change player names\n";
     std::cout << "  Give your command: ";
     while (getline(std::cin, input) && input.empty())
     {
@@ -56,12 +67,21 @@ void SettingsUserInterface::StartMenuEvent(std::vector<char> event)
         break;
         }
 
-       case 'S' :
+        case 'S' :
         {
-        GameEngine game;
-        game.Run();
+        GameEngine* p_game = new GameEngine(p_player1, p_player2);
+        p_game->Run();
         break;
         }
+
+       case 'C' : //Change player names
+       {
+       std::string name;
+       getline(std::cin, name);
+       p_player1->SetName(name);
+       std::cout << "New name for " << name << " is " << std::endl;
+       break;
+       }
 
         case 'Q' :
         {

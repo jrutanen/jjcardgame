@@ -13,6 +13,7 @@ class GameEngine
     public:
         GameEngine();
         virtual ~GameEngine();
+        GameEngine(Player* p_p1, Player* p_p2);
         void Run();
     protected:
     private:
