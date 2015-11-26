@@ -101,10 +101,11 @@
 1445360566 c:\newcardgame\jjcardgame\include\datamanager.h
 	"JJCardGame.h"
 
-1445117543 source:c:\newcardgame\jjcardgame\src\hero.cpp
+1448571085 source:c:\newcardgame\jjcardgame\src\hero.cpp
 	"Hero.h"
 
-1445360566 c:\newcardgame\jjcardgame\include\hero.h
+1448571102 c:\newcardgame\jjcardgame\include\hero.h
+	<string>
 	"JJCardGame.h"
 
 1445193764 source:c:\newcardgame\jjcardgame\src\monstercard.cpp
@@ -162,7 +163,7 @@
 1448297843 source:c:\newcardgame\jjcardgame\src\board.cpp
 	"Board.h"
 
-1448399536 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
+1448399748 source:c:\newcardgame\jjcardgame\src\gameengine.cpp
 	"GameEngine.h"
 
 1445202090 source:c:\newcardgame\jjcardgame\src\hand.cpp

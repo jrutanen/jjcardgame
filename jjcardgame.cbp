@@ -45,6 +45,7 @@
 		<Unit filename="include/Hero.h" />
 		<Unit filename="include/JJCardGame.h" />
 		<Unit filename="include/Player.h" />
+		<Unit filename="include/SettingsUserInterface.h" />
 		<Unit filename="include/UiCmdLine.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Board.cpp" />
@@ -55,6 +56,7 @@
 		<Unit filename="src/Hand.cpp" />
 		<Unit filename="src/Hero.cpp" />
 		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/SettingsUserInterface.cpp" />
 		<Unit filename="src/UiCmdLine.cpp" />
 		<Extensions>
 			<code_completion />

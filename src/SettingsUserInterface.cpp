@@ -34,8 +34,11 @@ void SettingsUserInterface::StartUserInterface()
     std::string input;
     std::cout << "|==============================================|\n";
     std::cout << "S-Start Game\n";
+    std::cout << "H-Select Hero:\n";
+    std::cout << "   Necromancer\n";
+    std::cout << "   Jedi\n";
+    std::cout << "C-Change player name\n";
     std::cout << "Q-Quit\n";
-    std::cout << "C-Change player names\n";
     std::cout << "  Give your command: ";
     while (getline(std::cin, input) && input.empty())
     {
@@ -64,6 +67,29 @@ void SettingsUserInterface::StartMenuEvent(std::vector<char> event)
         case '?' :
         {
         //ui.DisplayHelp();
+        break;
+        }
+
+        case 'H' :
+        int herotype1 = (int)event.at(1)-'0';
+        Hero hero1;
+        std::cout << "Select N-Necromancer or J-Jedi \n";
+        case 'N' :
+        {
+        if (event.at(1) == 'N') //Necromancer
+        {
+        hero1.SetHeroType("Necromancer");
+        std::cout << "You have selected Necromancer\n";
+        }
+        else if (event.at(1) == 'J') //Jedi
+        {
+        hero1.SetHeroType("Jedi");
+        std::cout << "You have selected Necromancer\n";
+        }
+        else
+        {
+          //Not valid hero type
+        }
         break;
         }
 
