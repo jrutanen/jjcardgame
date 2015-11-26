@@ -29,13 +29,16 @@ void SettingsUserInterface::StartUserInterface()
 {
   while(!die)
   {
-    Clear();
+    //Clear();
     std::vector<char> response;
     std::string input;
     std::cout << "|==============================================|\n";
     std::cout << "S-Start Game\n";
+    std::cout << "H-Select Hero:\n";
+    std::cout << "   Necromancer\n";
+    std::cout << "   Jedi\n";
+    std::cout << "C-Change player name\n";
     std::cout << "Q-Quit\n";
-    std::cout << "C-Change player names\n";
     std::cout << "  Give your command: ";
     while (getline(std::cin, input) && input.empty())
     {
@@ -61,12 +64,30 @@ void SettingsUserInterface::StartMenuEvent(std::vector<char> event)
     {
     switch(event.at(0))
       {
-        case '?' :
+        case 'H' :
         {
-        //ui.DisplayHelp();
-        break;
-        }
+        if (event.size() > 1)
+          {
+          Hero hero1;
+          std::cout << "Select N-Necromancer or J-Jedi \n";
 
+            if (event.at(1) == 'N') //Necromancer
+            {
+            hero1.SetHeroType("Necromancer");
+            std::cout << "You have selected Necromancer\n";
+            }
+            else if (event.at(1) == 'J') //Jedi
+            {
+            hero1.SetHeroType("Jedi");
+            std::cout << "You have selected Jedi\n";
+            }
+            else
+            {
+            hero1.SetHeroType("Necromancer"); //Not valid hero type
+            }
+            break;
+          }
+        }
         case 'S' :
         {
         GameEngine* p_game = new GameEngine(p_player1, p_player2);
@@ -82,7 +103,6 @@ void SettingsUserInterface::StartMenuEvent(std::vector<char> event)
        std::cout << "New name for " << name << " is " << std::endl;
        break;
        }
-
         case 'Q' :
         {
         die = true;
