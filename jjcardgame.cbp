@@ -36,6 +36,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Ai.h" />
 		<Unit filename="include/Board.h" />
 		<Unit filename="include/Card.h" />
 		<Unit filename="include/CardDeck.h" />
@@ -48,6 +49,7 @@
 		<Unit filename="include/SettingsUserInterface.h" />
 		<Unit filename="include/UiCmdLine.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Ai.cpp" />
 		<Unit filename="src/Board.cpp" />
 		<Unit filename="src/Card.cpp" />
 		<Unit filename="src/CardDeck.cpp" />

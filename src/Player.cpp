@@ -8,6 +8,7 @@ Player::Player()
   player_name = "Player 1";
   player_mana_points = 0;
   available_mana = 0;
+  ai = false;
 //  SetDeck(&card_deck);
 }
 
@@ -139,5 +140,11 @@ Card* Player::PlayCard(int card_nbr)
 Card* Player::CardInHand(int card_nbr)
 {
   return cards_in_hand.at(card_nbr);
+}
+
+
+void Player::SetAi(bool setai)
+{
+ ai = setai;
 }
 
