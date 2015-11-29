@@ -36,8 +36,10 @@ class Player
         Hand player_hand;
         Card* PlayCard(int card_nbr);
         Card* CardInHand(int card_nbr);
+        void SetAi(bool setai);
     protected:
     private:
+        bool ai;
         int hit_points;
         int player_mana_points;
         int available_mana;
@@ -47,6 +49,8 @@ class Player
         CardDeck card_deck;
         Hero* p_player_hero;
         std::vector<Card*> cards_in_hand; //moved here from Hand.h
+
+
 };
 
 #endif // PLAYER_H

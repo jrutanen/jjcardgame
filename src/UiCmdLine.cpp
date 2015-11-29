@@ -54,7 +54,9 @@ std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board, int
               << p2->GetAvailableMana() <<"(" << p2->GetMana() << ")\n";
   }
   std::cout << "|==============================================|\n";
-  std::cout << "  P x-Play Card x, A x y -Attack Card x with y, R-End turn, Q-Quit\n";
+  std::cout << "  P x-Play Card x\n";
+  std::cout << "  A x y -Attack Card x with y, Attack opponent with O\n";
+  std::cout << "  R-End turn, Q-Quit\n";
   std::cout << "  Give your command: ";
   while (getline(std::cin, input) && input.empty()) {
         std::cout << "\n  Please give a command.\n"
@@ -146,4 +148,8 @@ std::string UiCmdLine::GraveyardToString(std::vector<Card*> graveyard)
     }
   }
   return graveyard_str;
+}
+void UiCmdLine::AiLogic()
+{
+//Ai.UiEvent('P');
 }

@@ -8,6 +8,8 @@
 #include "Card.h"
 #include "Player.h"
 #include "Board.h"
+#include "GameEngine.h"
+
 
 
 class UiCmdLine
@@ -24,5 +26,7 @@ class UiCmdLine
     void Clear();
     std::string HandToString(std::vector<Card*> hand);
     std::string GraveyardToString(std::vector<Card*> graveyard);
+    void AiLogic();
+    //GameEngine Ai;
 };
 #endif // UICMDLINE_H
