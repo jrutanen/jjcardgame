@@ -8,7 +8,8 @@
 #include "Card.h"
 #include "Player.h"
 #include "Board.h"
-#include "GameEngine.h"
+#include "Ai.h"
+#include "JJCardGame.h"
 
 
 
@@ -26,7 +27,7 @@ class UiCmdLine
     void Clear();
     std::string HandToString(std::vector<Card*> hand);
     std::string GraveyardToString(std::vector<Card*> graveyard);
-    void AiLogic();
-    //GameEngine Ai;
+    //void AiLogic();
+    Ai ai_logic;
 };
 #endif // UICMDLINE_H

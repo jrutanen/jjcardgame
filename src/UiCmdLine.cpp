@@ -149,7 +149,3 @@ std::string UiCmdLine::GraveyardToString(std::vector<Card*> graveyard)
   }
   return graveyard_str;
 }
-void UiCmdLine::AiLogic()
-{
-//Ai.UiEvent('P');
-}
