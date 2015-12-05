@@ -117,6 +117,10 @@ void Player::SetUpTurn()
 
 void Player::SetUpGame()
 {
+  player_mana_points = 0;
+  hit_points = 40;
+  player_mana_points = 0;
+  available_mana = 0;
   //shuffle deck
   ShuffleDeck();
 
@@ -128,6 +132,7 @@ void Player::SetUpGame()
       DrawCard();
     }
   }
+
 }
 
 Card* Player::PlayCard(int card_nbr)
