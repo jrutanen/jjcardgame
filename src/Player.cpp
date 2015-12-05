@@ -124,6 +124,8 @@ void Player::SetUpGame()
   //shuffle deck
   ShuffleDeck();
 
+  //initialize hand to contain zero cards
+  cards_in_hand.clear();
   //start hand contains 2 cards
   for (int i = 0; i < 2; ++i)
   {
