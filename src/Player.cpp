@@ -143,8 +143,38 @@ Card* Player::CardInHand(int card_nbr)
 }
 
 
-void Player::SetAi(bool setai)
+void Player::SetAi(bool set_ai)
 {
- ai = setai;
+ ai = set_ai;
 }
+
+bool Player::IsAi()
+{
+  if (ai == true)
+  {
+  return true;
+  }
+  else
+  {
+  return false;
+  }
+}
+
+std::vector<char> Player::Evaluate(std::vector<Card*> p1_cards, std::vector<Card*> p2_cards)
+{
+    Ai ev;
+    return ev.EvaluatePlay(p1_cards, p2_cards, cards_in_hand);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 

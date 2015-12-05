@@ -53,24 +53,42 @@ std::vector<char> UiCmdLine::DrawBoard(Player* p1, Player* p2, Board* board, int
     std::cout << "  " << p2->GetName() << "\tHP: " << p2->GetHitPoints() << "\tMana: "
               << p2->GetAvailableMana() <<"(" << p2->GetMana() << ")\n";
   }
-  std::cout << "|==============================================|\n";
-  std::cout << "  P x-Play Card x\n";
-  std::cout << "  A x y -Attack Card x with y, Attack opponent with O\n";
-  std::cout << "  R-End turn, Q-Quit\n";
-  std::cout << "  Give your command: ";
-  while (getline(std::cin, input) && input.empty()) {
-        std::cout << "\n  Please give a command.\n"
-                  << "  Give your command: ";
-  }
+   //Second player play
+    std::cout << "|==============================================|\n";
+    std::cout << "  P x-Play Card x\n";
+    std::cout << "  A x y -Attack Card x with y, Attack opponent with O\n";
+    std::cout << "  R-End turn, Q-Quit\n";
+    std::cout << "  Give your command: ";
 
-  for(char& c : input) {
-    if (!isspace(c))
+
+    if ( active_player == 1 && p2->IsAi() ) //if player 2 is Ai and is active (his turn)
     {
-      response.push_back(c);
+    //Ai play
+   return //p2->Evaluate(p1_cards, p2_cards);
+
+   p2->Evaluate(board->GetCardsForPlayer( 0 ), board->GetCardsForPlayer(1) );
+   // while ()
     }
-  }
-  return response;
-}
+    else
+    {
+
+       while (getline(std::cin, input) && input.empty())  //Player play input
+       {
+       std::cout << "\n  Please give a command.\n"
+                  << "  Give your command: ";
+
+       }
+       for(char& c : input)
+       {
+       if (!isspace(c))
+       {
+       response.push_back(c);
+       }
+       //}
+      }
+      return response;
+    }
+    }
 
 void UiCmdLine::Clear()
 {
