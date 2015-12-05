@@ -8,6 +8,7 @@ Player::Player()
   player_name = "Player 1";
   player_mana_points = 0;
   available_mana = 0;
+  ai = false;
 //  SetDeck(&card_deck);
 }
 
@@ -140,4 +141,40 @@ Card* Player::CardInHand(int card_nbr)
 {
   return cards_in_hand.at(card_nbr);
 }
+
+
+void Player::SetAi(bool set_ai)
+{
+ ai = set_ai;
+}
+
+bool Player::IsAi()
+{
+  if (ai == true)
+  {
+  return true;
+  }
+  else
+  {
+  return false;
+  }
+}
+
+std::vector<char> Player::Evaluate(std::vector<Card*> p1_cards, std::vector<Card*> p2_cards)
+{
+    Ai ev;
+    return ev.EvaluatePlay(p1_cards, p2_cards, cards_in_hand);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 

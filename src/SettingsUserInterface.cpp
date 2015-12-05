@@ -33,10 +33,13 @@ void SettingsUserInterface::StartUserInterface()
     std::vector<char> response;
     std::string input;
     std::cout << "|==============================================|\n";
-    std::cout << "S-Start Game\n";
-    std::cout << "H-Select Hero:\n";
-    std::cout << "   Necromancer\n";
-    std::cout << "   Jedi\n";
+    std::cout << "Welcome to jjcardgame!\n";
+    std::cout << "|==============================================|\n";
+    std::cout << "S-Start Singleplayer Game\n";
+    std::cout << "M-Start Multiplayer Game\n";
+    std::cout << "H-Select Hero, HX\n";
+    std::cout << "   N-Necromancer\n";
+    std::cout << "   J-Jedi\n";
     std::cout << "C-Change player name\n";
     std::cout << "Q-Quit\n";
     std::cout << "  Give your command: ";
@@ -88,8 +91,18 @@ void SettingsUserInterface::StartMenuEvent(std::vector<char> event)
             break;
           }
         }
-        case 'S' :
+
+        case 'S' : //Start Singleplayer Game
         {
+        p_player2->SetAi(true); //
+        GameEngine* p_game = new GameEngine(p_player1, p_player2);
+        p_game->Run();
+        break;
+        }
+
+        case 'M' : //Start Multiplayer Game
+        {
+        p_player2->SetAi(false);
         GameEngine* p_game = new GameEngine(p_player1, p_player2);
         p_game->Run();
         break;

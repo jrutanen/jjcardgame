@@ -132,7 +132,7 @@
 	<iostream>
 	<vector>
 
-1448224046 c:\newcardgame\jjcardgame\include\player.h
+1449352571 c:\newcardgame\jjcardgame\include\player.h
 	<string>
 	<vector>
 	"CardDeck.h"
@@ -140,6 +140,8 @@
 	"Hand.h"
 	"Card.h"
 	"JJCardGame.h"
+	"Ai.h"
+	"Board.h"
 
 1445964887 c:\newcardgame\jjcardgame\include\carddeck.h
 	<vector>
@@ -174,7 +176,7 @@
 1448197415 source:c:\newcardgame\jjcardgame\src\carddeck.cpp
 	"CardDeck.h"
 
-1448224059 source:c:\newcardgame\jjcardgame\src\player.cpp
+1449353078 source:c:\newcardgame\jjcardgame\src\player.cpp
 	"Player.h"
 
 1448204254 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\uicmdline.h
@@ -190,7 +192,7 @@
 1448227932 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\uicmdline.cpp
 	"UiCmdLine.h"
 
-1448204702 c:\newcardgame\jjcardgame\include\uicmdline.h
+1449331895 c:\newcardgame\jjcardgame\include\uicmdline.h
 	<iostream>
 	<string>
 	<vector>
@@ -199,8 +201,9 @@
 	"Card.h"
 	"Player.h"
 	"Board.h"
+	"JJCardGame.h"
 
-1448297843 source:c:\newcardgame\jjcardgame\src\uicmdline.cpp
+1449353450 source:c:\newcardgame\jjcardgame\src\uicmdline.cpp
 	"UiCmdLine.h"
 
 1448390909 c:\newcardgame\jjcardgame\include\settingsuserinterface.h
@@ -212,9 +215,10 @@
 	<string>
 	<sstream>
 
-1448575317 source:c:\newcardgame\jjcardgame\src\settingsuserinterface.cpp
+1449345095 source:c:\newcardgame\jjcardgame\src\settingsuserinterface.cpp
 	"SettingsUserInterface.h"
 
+<<<<<<< HEAD
 1448647237 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\settingsuserinterface.h
 	"JJCardGame.h"
 	"GameEngine.h"
@@ -288,4 +292,13 @@
 	"DBControl.h"
 
 1449339994 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\dbcontrol.h
+=======
+1449352902 source:c:\newcardgame\jjcardgame\src\ai.cpp
+	"Ai.h"
+
+1449352886 c:\newcardgame\jjcardgame\include\ai.h
+	"Player.h"
+	"JJCardGame.h"
+	"Board.h"
+>>>>>>> 38cfe8e12de185ad85a7d5e8713f0b6b76282981
 

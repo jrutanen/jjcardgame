@@ -7,6 +7,8 @@
 #include "Hand.h"
 #include "Card.h"
 #include "JJCardGame.h"
+#include "Ai.h"
+#include "Board.h"
 
 //using namespace std;
 
@@ -36,8 +38,13 @@ class Player
         Hand player_hand;
         Card* PlayCard(int card_nbr);
         Card* CardInHand(int card_nbr);
+        void SetAi(bool set_ai);
+        bool IsAi();
+        //std::vector<char> Evaluate(Board* b);
+        std::vector<char> Evaluate(std::vector<Card*> p1_cards, std::vector<Card*> p2_cards);
     protected:
     private:
+        bool ai;
         int hit_points;
         int player_mana_points;
         int available_mana;
@@ -47,6 +54,8 @@ class Player
         CardDeck card_deck;
         Hero* p_player_hero;
         std::vector<Card*> cards_in_hand; //moved here from Hand.h
+
+
 };
 
 #endif // PLAYER_H
