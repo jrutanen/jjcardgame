@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1445897661 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\main.cpp
+1448318086 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\main.cpp
 	<random>
 	"GameEngine.h"
+	"SettingsUserInterface.h"
 
-1448225582 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\gameengine.h
+1448647237 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\gameengine.h
 	"JJCardGame.h"
 	"Player.h"
 	"CardDeck.h"
@@ -35,7 +36,8 @@
 	<string>
 	"JJCardGame.h"
 
-1445288374 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\hero.h
+1448647237 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\hero.h
+	<string>
 	"JJCardGame.h"
 
 1445288369 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\hand.h
@@ -47,7 +49,7 @@
 1445199982 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\hand.cpp
 	"Hand.h"
 
-1445121390 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\hero.cpp
+1448647237 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\hero.cpp
 	"Hero.h"
 
 1448225999 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\player.cpp
@@ -65,7 +67,7 @@
 1445288354 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\datamanager.h
 	"JJCardGame.h"
 
-1448227585 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\gameengine.cpp
+1448647237 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\gameengine.cpp
 	"GameEngine.h"
 
 1445193693 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\monstercard.cpp
@@ -185,7 +187,7 @@
 	"Player.h"
 	"Board.h"
 
-1448204373 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\uicmdline.cpp
+1448227932 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\uicmdline.cpp
 	"UiCmdLine.h"
 
 1448204702 c:\newcardgame\jjcardgame\include\uicmdline.h
@@ -212,4 +214,78 @@
 
 1448575317 source:c:\newcardgame\jjcardgame\src\settingsuserinterface.cpp
 	"SettingsUserInterface.h"
+
+1448647237 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\settingsuserinterface.h
+	"JJCardGame.h"
+	"GameEngine.h"
+	"Player.h"
+	<iostream>
+	<vector>
+	<string>
+	<sstream>
+
+1448647237 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\settingsuserinterface.cpp
+	"SettingsUserInterface.h"
+
+1449342987 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\lib\sqlite\sqlite3.c
+	<vxWorks.h>
+	<pthread.h>
+	"mingw.h"
+	"_mingw.h"
+	<stdarg.h>
+	"config.h"
+	<stdint.h>
+	<inttypes.h>
+	<intrin.h>
+	<cmnintrin.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<TargetConditionals.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	"windows.h"
+	<sys/cygwin.h>
+	<errno.h>
+	<process.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/ioctl.h>
+	<sys/file.h>
+	<sys/param.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/mount.h>
+	<utime.h>
+	<sys/dcmd_blk.h>
+	<sys/statvfs.h>
+	<dlfcn.h>
+	<tcl.h>
+	"sqlite3rtree.h"
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+	<ctype.h>
+	<math.h>
+
+1449343100 source:c:\users\janirutanen\programming\jjcardgame\jjcardgame\src\dbcontrol.cpp
+	"DBControl.h"
+
+1449339994 c:\users\janirutanen\programming\jjcardgame\jjcardgame\include\dbcontrol.h
 
