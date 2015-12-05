@@ -102,6 +102,7 @@ void SettingsUserInterface::StartMenuEvent(std::vector<char> event)
 
         case 'M' : //Start Multiplayer Game
         {
+        p_player2->SetAi(false);
         GameEngine* p_game = new GameEngine(p_player1, p_player2);
         p_game->Run();
         break;

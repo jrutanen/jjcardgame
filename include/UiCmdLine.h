@@ -8,7 +8,7 @@
 #include "Card.h"
 #include "Player.h"
 #include "Board.h"
-#include "Ai.h"
+//#include "Ai.h"
 #include "JJCardGame.h"
 
 
